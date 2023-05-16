@@ -1,0 +1,25 @@
+{
+  "name": "css_edit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx tsc && node dist/index.js",
+    "start_help": "npx tsc && node dist/index.js -h",
+    "test": "npx tsc && node dist/index.js -i test/in.scss -o test/out.scss --deleteCommentsRules=test/ignoreRule.json"
+  },
+  "author": "lukassz111@gmail.com",
+  "license": "ISC",
+  "bin": {
+    "css_edit": "dist/index.js"
+  },
+  "dependencies": {
+    "commander": "^10.0.1",
+    "figlet": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.2",
+    "typescript": "^5.0.4"
+  }
+}
