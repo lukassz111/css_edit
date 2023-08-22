@@ -1,0 +1,90 @@
+.tul-recruitment-layout-article {
+    transition: 100ms;
+
+    >.tul-recruitment-layout-region-body {
+        background-color: var(--tul_recruitment-white);
+        padding: 1rem;
+
+        .field--name-field-article-categories,
+        .field--name-field-departament {
+            display: flex;
+            justify-content: center;
+            color: #7A7A7A;
+            font-size: 1.18rem;
+        }
+
+        .field--name-title,
+        .field--name-field-display-name {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        >.block>.content>.field--name-field-media .tul-recruitment-view-mode-default>.field--type-image {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+
+@media(min-width: 720px) {
+
+    .tul-recruitment-layout-article>.tul-recruitment-layout-region-body {
+        position: relative;
+        z-index: 100;
+        border-radius: 0.56rem;
+        border-width: 0;
+        padding-top: 4.68rem;
+
+    }
+
+    .tul-recruitment-layout-article>.tul-recruitment-layout-region-body>.block {
+        max-width: 700px;
+        width: 700px;
+        --body-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 1440px) {
+    .tul-recruitment-layout-article>.tul-recruitment-layout-region-body {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+
+/* banner in text image */
+
+
+.tul-recruitment-layout-article>.tul-recruitment-layout-region-body .text-formatted>.tul-recruitment-view-mode-banner>.field,
+.tul-recruitment-layout-article>.tul-recruitment-layout-region-body .text-formatted>.tul-recruitment-view-mode-banner>.field img {
+    width: 100%;
+}
+
+.tul-recruitment-layout-article>.tul-recruitment-layout-region-body .text-formatted>.tul-recruitment-view-mode-banner {
+    width: 100%;
+    --margin-lr: 0;
+    margin-left: var(--margin-lr);
+    margin-right: var(--margin-lr);
+}
+// .tul-recruitment-layout-article>.tul-recruitment-layout-region-body .text-formatted>.tul-recruitment-view-mode-banner {
+//     width: var(--id-main-wrapper-width);
+//     --id-main-wrapper-width-half: calc(var(--id-main-wrapper-width) / 2);
+//     --margin-lr: calc(50% - var(--id-main-wrapper-width-half));
+//     margin-left: var(--margin-lr);
+//     margin-right: var(--margin-lr);
+// }
+
+@media(min-width: 1440px) {
+    // .tul-recruitment-layout-article>.tul-recruitment-layout-region-body .text-formatted>.tul-recruitment-view-mode-banner {
+    //     width: calc(900px + 0rem);
+    //     --margin-lr: calc((50% - 450px) - 0rem);
+    //     margin-left: var(--margin-lr);
+    //     margin-right: var(--margin-lr);
+    // }
+}

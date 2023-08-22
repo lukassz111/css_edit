@@ -1,0 +1,78 @@
+.paragraph--type--gallery-photocollage {
+    display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media {
+   display: block;
+   margin: 0;
+ }
+ 
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item {
+   display: block;
+   width: 100%;
+   height: auto;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item > div {
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item > div > .field--type-image {
+   display: block;
+   margin: 0;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item > div > .field--type-image >.field__item > a {
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item > div > .field--type-image >.field__item > a > img {
+    margin: 0;
+    border-radius: 0.56rem;
+  }
+ 
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item > div{
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media {
+     display: grid; 
+     grid-auto-flow: row dense; 
+     grid-auto-rows: 1fr; 
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+     grid-template-rows: 1.5fr 1fr; 
+     gap: 1.38% 1.38%; 
+     grid-template-areas: 
+       "p1 p1 p1 p1 p2 p2 p2 p2 p3 p3 p3 p3"
+       "p4 p4 p4 p5 p5 p5 p6 p6 p6 p7 p7 p7"; 
+     justify-content: stretch; 
+     align-content: stretch; 
+     justify-items: stretch; 
+     align-items: stretch; 
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item {
+   margin: 0 auto;
+   display: none;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(1) {
+   grid-area: p1;
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(2) {
+   grid-area: p2;
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(3) {
+   grid-area: p3;
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(4) {
+   grid-area: p4;
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(5) {
+   grid-area: p5;
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(6) {
+   grid-area: p6;
+   display: block;
+ }
+ .paragraph--type--gallery-photocollage > .field--name-field-media > .field__item:nth-child(7) {
+   grid-area: p7;
+   display: block;
+ }

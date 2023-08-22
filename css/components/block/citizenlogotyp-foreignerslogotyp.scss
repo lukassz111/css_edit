@@ -1,0 +1,28 @@
+#block-citizenlogotyp,
+#block-foreignerslogotyp {
+    height: 100%;
+
+    >.content {
+        height: 100%;
+
+        >.text-formatted {
+            height: 100%;
+
+            >p {
+                display: block;
+                height: 100%;
+            }
+
+            >p>a {
+                display: block;
+                height: 100%;
+            }
+
+            >p>a>img {
+                height: 100%;
+            }
+        }
+
+
+    }
+}

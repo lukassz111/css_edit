@@ -1,0 +1,10 @@
+.theme-dark {.paragraph--type--steps-list .tul-step-number {
+    border-color: var(--tul_recruitment-orange);
+}
+@media (min-width: 1440px) {
+.tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items,    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items {}
+.tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items>.field__item,    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items>.field__item {}
+.tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items>.field__item>.tul-step,    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items>.field__item>.tul-step {}
+.tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items>.field__item>.paragraph--type--step-fontawesome,    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items>.field__item>.paragraph--type--step-fontawesome {}
+}
+} 

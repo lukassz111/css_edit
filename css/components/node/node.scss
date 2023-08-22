@@ -1,0 +1,38 @@
+.node--view-mode-full {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.node--view-mode-full > .node__content > .field--name-field-body-paragraphs > .field__item > .paragraph--type--text > .text-formatted {
+  max-width: 750px;
+  margin: 0 auto;
+}
+@media (min-width: 1920px) {
+  @mixin width_and_margin_for_content() {
+
+    >.paragraph--type--container,
+    >.paragraph--type--steps-list,
+    >.paragraph--type--text,
+    >.paragraph--type--cards-group {
+      width: 1440px;
+      margin: 0 auto;
+    }
+  }
+
+  article.node--type-page {
+    >.node__content>.field--name-field-body-paragraphs>.field__item {
+      @include width_and_margin_for_content();
+
+      >.paragraph--type--from-library>.field--name-paragraphs {
+        @include width_and_margin_for_content();
+      }
+
+      >.paragraph--type--tabs-group>.field--name-field-tabs>.field__item>.paragraph--type--tab>.field--name-field-paragraph-body>.field__item {
+        @include width_and_margin_for_content();
+        
+        >.paragraph--type--from-library>.field--name-paragraphs {
+          @include width_and_margin_for_content();
+        }
+      }
+    }
+  }
+}

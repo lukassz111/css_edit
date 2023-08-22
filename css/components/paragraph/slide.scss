@@ -1,0 +1,135 @@
+@import '../../../scss_includes/_backgrounds.scss';
+
+.tul-recruitment-slide {
+    >.field--name-field-slide-link-label {
+        display: block;
+
+        >a {
+            border-style: solid;
+            border-width: 0.33rem;
+            border-radius: 1.25rem;
+            height: 2.5rem;
+            background-color: var(--tul-recruitment-blue-medium);
+            border-color: var(--tul-recruitment-blue-medium);
+            color: var(--tul_recruitment-white);
+            padding-left: 0.66rem;
+            padding-right: 0.66rem;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.paragraph--type--slider {
+    .tul-recruitment-slide>.field--name-field-slide-link-label {
+        // color: var(--tul-recruitment-beige-dark);
+        // color: var(--tul-recruitment-blue-medium);
+        @include set-color('blueMedium');
+
+        >a {
+            color: inherit;
+
+            >span {
+                color: inherit;
+            }
+        }
+    }
+}
+
+/* styles */
+.tul-recruitment-slide {
+
+    /* icon-right-arrow */
+    &.tul-recruitment-style-icon-right-arrow {
+        .field--name-field-slide-link-label>a>span.after-text {
+            background-image: var(--tul-svg-light-arrow-btn-right);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            background-size: contain;
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+            margin-left: 0.5rem;
+            &::after {
+                content: '    ';
+            }
+        }
+    }
+
+
+    /* blue-medium|blue-medium-dotted */
+    &.tul-recruitment-style-blue-medium,
+    &.tul-recruitment-style-blue-medium-dotted {
+        border-radius: 0.56rem;
+        border-width: 0;
+        border-style: solid;
+        padding: 1rem;
+        color: var(--tul-recruitment-beige-light);
+
+        >.field--name-field-slide-link-label>a {
+            background-color: var(--tul-recruitment-beige-light);
+            border-color: var(--tul-recruitment-beige-light);
+            color: var(--tul-recruitment-blue-medium);
+        }
+    }
+
+    /* blue-medium */
+    &.tul-recruitment-style-blue-medium {
+        background-color: var(--tul-recruitment-blue-medium);
+    }
+
+    /* blue-medium-dotted */
+    &.tul-recruitment-style-blue-medium-dotted {
+        background-image: radial-gradient(var(--tul-recruitment-blue-light) 10%, var(--tul-recruitment-blue-medium) 20%);
+        background-size: 16px 16px;
+    }
+
+    
+    /* icon-right-arrow && blue-medium-dotted */
+    &.tul-recruitment-style-icon-right-arrow.tul-recruitment-style-blue-medium-dotted .field--name-field-slide-link-label>a>span.after-text {
+        background-image: var(--tul-svg-dark-arrow-btn-right);
+    }
+
+    /* link-btn-transparent */
+    &.tul-recruitment-style-link-btn-transparent>.field--name-field-slide-link-label>a {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    /* link-btn-left-align */
+    &.tul-recruitment-style-link-btn-left-align>.field--name-field-slide-link-label {
+        justify-self: flex-start;
+    }
+    /* white */
+    &.tul-recruitment-style-white {
+        border-radius: 0.56rem;
+        border-width: 0;
+        border-style: solid;
+        padding: 1rem;
+        background-color: var(--tul_recruitment-white);
+        color: var(--tul-recruitment-blue-medium);
+    }
+    /* white && link-btn-transparent */
+    &.tul-recruitment-style-white.tul-recruitment-style-link-btn-transparent>.field--name-field-slide-link-label>a {
+        color: inherit;
+    }
+
+
+    /* white && link-btn-transparent && icon-right-arrow */
+    &.tul-recruitment-style-white.tul-recruitment-style-link-btn-transparent.tul-recruitment-style-icon-right-arrow .field--name-field-slide-link-label>a>span.after-text {
+        background-image: var(--tul-svg-dark-arrow-btn-right);
+    }
+
+    /* link-btn-white */
+    &.tul-recruitment-style-link-btn-white>.field--name-field-slide-link-label>a {
+        border-color: var(--tul-recruitment-blue-medium);
+        color: inherit;
+        background-color: var(--tul_recruitment-white);
+        border-width: 1pt;
+    }
+}

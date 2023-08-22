@@ -1,0 +1,35 @@
+.social-media-sharing>span {
+    text-transform: uppercase;
+    line-height: 1.25rem;
+    letter-spacing: 0.1rem;
+    margin-right: 1rem;
+}
+
+.social-media-sharing>ul>li>a {
+    text-decoration: none;
+    border-radius: 40rem;
+    border-width: 1pt;
+    border-color: var(--tul-recruitment-blue-medium);
+    border-style: solid;
+    padding: 0.56rem;
+    display: inline-block;
+    --icon-size: 1.25rem;
+}
+
+.social-media-sharing>ul>li>a>.img_label {
+    white-space: pre-wrap;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: var(--icon-size);
+    width: var(--icon-size);
+}
+
+.social-media-sharing>ul>li>a.email>.img_label {
+    background-image: var(--tul-svg-open-envelope);
+}
+
+.social-media-sharing>ul>li>a>.text_label {
+    display: none;
+}

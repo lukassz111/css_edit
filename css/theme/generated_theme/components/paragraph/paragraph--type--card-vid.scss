@@ -1,0 +1,12 @@
+.theme-dark {.paragraph--type--card-vid>.field--name-field-card-vid-vid .field--name-field-media-oembed-video iframe {
+  color: white;
+}
+@media (min-width: 1440px) {
+.paragraph--type--card-vid {
+    grid-template-areas:
+      "header header"
+      "description description"
+      "video image";
+  }
+}
+} 

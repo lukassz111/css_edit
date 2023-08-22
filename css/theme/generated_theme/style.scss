@@ -1,0 +1,97 @@
+.theme-dark {/**
+ * @file
+ * Subtheme specific CSS.
+ */
+:root {
+  --tul_recruitment-bg: #f8f6f3;
+  --tul_recruitment-white: #ffffff;
+  --tul_recruitment-border: #dfdbd5;
+  --tul_recruitment-text: #112633;
+  --tul_recruitment-text-onblack: #f1edec;
+  --tul_recruitment-bg-footer: #112633;
+  --tul_recruitment-orange: #ff8440;
+  --tul_recruitment-text-on-bg-orange: #112633;
+  --tul_recruitment-header-menu-text: #112633;
+  --tul_recruitment-header-border-color: #d7d3cc;
+  --tul_recruitment-form-radio-button-not-active: #e4e1dc;
+  --tul_recruitment-form-input-placeholder-text: #787878;
+  --tul_recruitment-view-background-dot-color: #cacbca;
+  --tul-recruitment-burgundy: #622022;
+  --tul-recruitment-burgundy-light: #713536;
+  --tul-recruitment-beige-dark: #D7D3CC;
+  --tul-recruitment-beige-medium: #DCDCDC;
+  --tul-recruitment-beige-light: #F8F6F3;
+  --tul-recruitment-beige-dots: #DADBDC;
+  --tul-recruitment-blue-dark: #0B1A21;
+  --tul-recruitment-blue-medium: #112633;
+  --tul-recruitment-blue-light: #283A46;
+  --tul-recruitment-orange-dark: #FF763F;
+  --tul-recruitment-orange-light: #FF9253;
+  --tul-recruitment-navyblack-dark: #0A161D;
+  --tul-recruitment-navyblack-medium: #121D24;
+  --tul-recruitment-navy-dark: #13222A;
+  --tul-recruitment-navy-medium:#122B3C;
+  --tul-recruitment-grey-dark: #423A35;
+  --tul-recruitment-grey-medium: #3A4348;
+  --tul-recruitment-grey-light: #787878;
+  --tul-recruitment-grey-lighter: #AEABA5;
+  --tul-recruitment-snow: #FAF9F7;
+  --tul-recruitment-americansilver: #D1D0CB;
+  --tul-recruitment-alabaster: #EAEBEE;
+}
+* {}
+/**
+ * Fixing bootstrap
+ */
+/**
+ * Fixing drupal
+ */
+.content {
+  color: inherit !important;
+  background-color: inherit !important;
+}
+.block,.text-formatted {
+  color: inherit;
+  background-color: inherit;
+}
+/**
+ * Minimum site width
+ */
+/**
+ * Fix layout-builder
+ */
+/**
+ * 
+ */
+.nav {
+  font: satoshi;
+}
+html,body,#page-wrapper {
+  background: white;
+  color: var(--tul-recruitment-blue-medium);
+}
+#page,#main-wrapper {
+  background: var(--tul-recruitment-beige-light);
+  color: var(--tul-recruitment-blue-medium);
+}
+@media (min-width: 1440px) {
+  :root {
+/* --id-main-wrapper-margin-double: calc(100vw - var(--id-main-wrapper-width));
+  }
+}
+.navbar_custom {
+  color: rgb(255, 85, 215);
+}
+@media (max-width: 375px) {}
+@media (min-width: 376px) {}
+.paragraph--type--card-vid {
+  background-image: radial-gradient(var(--tul-recruitment-blue-light) 10%, var(--tul-recruitment-blue-medium) 20%);
+}
+.tul-recruitment-bundle-card-vid {
+  color: rgb(255, 255, 255);
+}
+/* .field--name-field-card-vid-cont > p {
+  margin-inline: 15%;
+}
+ */
+} 

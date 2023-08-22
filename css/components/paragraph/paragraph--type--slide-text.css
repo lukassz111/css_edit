@@ -1,0 +1,32 @@
+.paragraph--type--slide-text {
+    display: grid;
+    grid-auto-columns: auto;
+    gap: 1rem 1rem;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
+    grid-template-areas:
+        "text"
+        "link";
+}
+
+.paragraph--type--slider .paragraph--type--slide-text {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content var(--paragraph--type--slider--control-group-height);
+    grid-template-areas:
+        "text"
+        "link"
+        ".";
+}
+
+.paragraph--type--slide-text>.field--name-field-slide-text {
+    grid-area: text;
+}
+
+.paragraph--type--slide-text>.field--name-field-slide-link-label {
+    grid-area: link;
+}

@@ -1,0 +1,41 @@
+.theme-dark {.site-footer {
+    background: var(--tul-recruitment-beige-light);
+    color: var(--tul-recruitment-blue-medium);
+}
+@media (min-width: 1440px) {}
+.site-footer>* {
+    background: var(--tul_recruitment-bg-footer);
+    color: var(--tul_recruitment-text-onblack);
+}
+.site-footer>div {
+    border-color: var(--tul_recruitment-bg-footer);
+    border-bottom-right-radius: 0;
+}
+@media (min-width: 1440px) {}
+@media (min-width: 1440px) {}
+.site-footer .site-footer__top>.region>.block-menu {
+    background: var(--tul_recruitment-bg-footer);
+    color: var(--tul_recruitment-text-onblack);
+}
+.site-footer .site-footer__top>.region>.block-menu .nav {
+    background: var(--tul_recruitment-bg-footer);
+    color: var(--tul_recruitment-text-onblack);
+}
+.site-footer .site-footer__top>.region>.block-menu .nav>.nav-item,.site-footer .site-footer__top>.region>.block-menu .nav>.nav-item>.nav-link {
+    background: var(--tul_recruitment-bg-footer);
+    color: var(--tul_recruitment-text-onblack);
+}
+.site-footer .site-footer__top>.region>.tul-recruitment-bundle-text,.site-footer .site-footer__top>.region>.tul-recruitment-bundle-text>.content {}
+/* @media all and (min-width: 560px) and (max-width: 850px) {}
+  
+  @media all and (min-width: 851px) {}
+ 
+  
+  
+.site-footer>div {
+    
+    border-color: var(--tul_recruitment-bg-footer);
+    --border-radius: 20px;
+    border-top-right-radius: var(--border-radius);
+  }
+ */} 

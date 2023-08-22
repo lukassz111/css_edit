@@ -1,0 +1,18 @@
+
+.paragraph--type--video-in-one-row>.tul-views-swipe-inline>.tul-views-swipe-inline-scroll>.field__items>.field__item {
+    width: 100%;
+    aspect-ratio: 500/293;
+}
+
+.paragraph--type--video-in-one-row>.tul-views-swipe-inline>.tul-views-swipe-inline-scroll>.field__items>.field__item .contextual-region {
+    width: 100%;
+    height: 100%;
+    position: static;
+}
+
+.paragraph--type--video-in-one-row>.tul-views-swipe-inline>.tul-views-swipe-inline-scroll>.field__items>.field__item .field--name-field-media-oembed-video,
+.paragraph--type--video-in-one-row>.tul-views-swipe-inline>.tul-views-swipe-inline-scroll>.field__items>.field__item .field--name-field-media-oembed-video>.field__item,
+.paragraph--type--video-in-one-row>.tul-views-swipe-inline>.tul-views-swipe-inline-scroll>.field__items>.field__item .field--name-field-media-oembed-video>.field__item>iframe {
+    width: 100%;
+    height: 100%;
+}

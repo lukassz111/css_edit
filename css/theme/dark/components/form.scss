@@ -1,0 +1,49 @@
+.theme-dark {
+    form {
+
+        fieldset>legend,
+        .form-type-select>label,
+        .form-type-textfield>label {
+            color: var(--tul-recruitment-navy-medium);
+        }
+
+        fieldset .fieldset-wrapper {
+            >.radio {
+                background-color: var(--tul-recruitment-americansilver);
+
+                >.radio>label {
+                    background-color: var(--tul-recruitment-americansilver);
+                    color: var(--tul-recruitment-navyblack-medium);
+
+                }
+
+                >.radio>input:checked+label {
+                    background-color: var(--tul-recruitment-snow);
+                }
+            }
+
+        }
+
+        .form-type-textfield {
+            input {
+                color: var(--tul-recruitment-navyblack-medium);
+            }
+        }
+
+        .form-type-select {
+            select {
+                color: var(--tul-recruitment-navyblack-medium);
+
+                &[data-val="All"] {
+                    color: var(--tul-recruitment-navy-medium);
+                }
+            }
+        }
+
+        .form-actions>.btn {
+            color: var(--tul-recruitment-beige-light);
+            background-color: var(--tul-recruitment-navyblack-dark);
+        }
+
+    }
+}

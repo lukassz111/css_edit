@@ -1,0 +1,110 @@
+.paragraph--type--card-vid .field--name-field-card-vid-imgs {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  gap: 1.86%;
+  flex-wrap: wrap;
+}
+
+.paragraph--type--card-vid .field--name-field-card-vid-imgs>.field__item {
+  width: calc(25% - 1.86%);
+  margin-top: 1.86%;
+}
+
+.paragraph--type--card-vid .field--name-field-card-vid-imgs .field--name-field-media-image {
+  width: 100%;
+}
+
+.paragraph--type--card-vid .field--name-field-card-vid-imgs .field--name-field-media-image>.field__item {
+  width: 100%;
+}
+
+.paragraph--type--card-vid .field--name-field-card-vid-imgs .field--name-field-media-image>.field__item .colorbox {
+  width: 100%;
+  display: block;
+}
+
+.paragraph--type--card-vid .field--name-field-card-vid-imgs .field--name-field-media-image>.field__item img {
+  margin: 0;
+  border-width: 0;
+  border-style: solid;
+  border-radius: 0.56rem;
+  width: 100%;
+  height: auto;
+
+}
+
+
+
+
+.paragraph--type--card-vid>.field--name-field-card-vid-vid .field--name-field-media-oembed-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+.paragraph--type--card-vid>.field--name-field-card-vid-vid .field--name-field-media-oembed-video {
+  width: 100%;
+  padding-top: 56%;
+  position: relative;
+  display: flex;
+}
+
+@media (min-width: 1440px) {
+  .paragraph--type--card-vid {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    gap: 1.38% 1.38%;
+    grid-template-areas:
+      "header header"
+      "description description"
+      "video image";
+    justify-content: stretch;
+    align-content: center;
+    justify-items: stretch;
+    align-items: center;
+
+  }
+
+  .paragraph--type--card-vid>.field--name-field-card-vid-title {
+    grid-area: header;
+  }
+
+  .paragraph--type--card-vid>.field--name-field-card-vid-cont {
+    grid-area: description;
+  }
+
+  .paragraph--type--card-vid>.field--name-field-card-vid-vid {
+    grid-area: video;
+  }
+
+  .paragraph--type--card-vid>.field--name-field-card-vid-imgs {
+    grid-area: image;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .paragraph--type--card-vid .field--name-field-card-vid-imgs {
+    width: 70%;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+  }
+
+  .paragraph--type--card-vid .field--name-field-card-vid-imgs>.field__item {
+    width: 100%;
+    margin-top: 1.86%;
+  }
+}

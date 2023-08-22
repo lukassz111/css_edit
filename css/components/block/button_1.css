@@ -1,0 +1,58 @@
+.tul-recruitment-bundle-button-1 .content a {
+    display: block;
+}
+
+.tul-recruitment-bundle-button-1 .content a>button {
+    border-style: solid;
+    border-width: 0.33rem;
+    border-radius: 1.25rem;
+    height: 2.5rem;
+    background-color: var(--tul_recruitment-orange);
+    border-color: var(--tul_recruitment-orange);
+    color: var(--tul_recruitment-text-on-bg-orange);
+    padding-left: 0.66rem;
+    padding-right: 0.66rem;
+}
+
+/* Icon right-arrow on button */
+.tul-recruitment-style-icon-right-arrow.tul-recruitment-bundle-button-1 .content button>span::after {
+    content: "";
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: contain;
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+
+.tul-recruitment-style-no-background.tul-recruitment-bundle-button-1 .content a>button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.tul-recruitment-style-icon-before-switch-website.tul-recruitment-bundle-button-1 .content button>span::before {
+    content: "";
+    background-image: var(--tul-svg-dark-switch-website);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: contain;
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+
+/*
+ * Konkretne instancje bloków
+ */
+#block-forforeigners-2 button,
+#block-forcitizenen-2 button {
+    padding: 0 1ch;
+    font-size: 0.875rem;
+}

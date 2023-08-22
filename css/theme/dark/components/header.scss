@@ -1,0 +1,33 @@
+.theme-dark {
+
+    #header>#navbar-top {
+        border-bottom-color: var(--tul-recruitment-grey-dark);
+    }
+
+    #header>#navbar-main {
+        background: var(--tul-recruitment-navyblack-dark);
+        color: var(--tul-recruitment-beige-light);
+        border-bottom-color: var(--tul-recruitment-grey-dark);
+    }
+
+    #header>#navbar-main #block-glownanawigacja,
+    #header>#navbar-main #block-glownanawigacja a {
+        color: var(--tul-recruitment-beige-light);
+    }
+
+    #header>#navbar-offcanvas {
+        background-color: var(--tul-recruitment-navyblack-dark);
+    }
+
+    #header>#navbar-offcanvas>.offcanvas-header-top {
+        border-bottom-color: var(--tul-recruitment-grey-dark);
+    }
+
+    #header>#navbar-offcanvas #navbar-offcanvas-close {
+        border-bottom: 1px solid var(--tul-recruitment-grey-dark);
+    }
+
+    #header>#navbar-offcanvas>.offcanvas-header {
+        border-bottom-color: var(--tul-recruitment-grey-dark);
+    }
+}

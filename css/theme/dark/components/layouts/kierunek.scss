@@ -1,0 +1,14 @@
+.theme-dark {
+  .tul-recruitment-layout-kierunek {
+    >.tul-recruitment-layout-region-tag {
+      >.tul-recruitment-layout-region-tag-inner>div>.block {
+        background: var(--tul-recruitment-navyblack-dark);
+      }
+    }
+
+    >.tul-recruitment-layout-region-card {
+      background: var(--tul-recruitment-navyblack-dark);
+      border-color: var(--tul-recruitment-grey-medium);
+    }
+  }
+}

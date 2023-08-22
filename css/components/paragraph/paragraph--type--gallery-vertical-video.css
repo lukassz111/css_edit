@@ -1,0 +1,98 @@
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 83fr 16fr;
+  grid-template-rows: 1fr;
+  /*   gap: 1.38% 1.38%;  */
+  grid-template-areas:
+    "active not-active";
+  /*   justify-content: center;  */
+  /*   align-content: center;  */
+  /*   justify-items: center;  */
+  /*   align-items: center; */
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-1 {
+  grid-area: active;
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-1>.field__item {
+  display: none;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-1>.field__item.active {
+  display: block;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-1>.field__item>.tul-recruitment-view-mode-w913h504>.field>.field__item>iframe {
+  width: 913px;
+  aspect-ratio: 913/504;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2 {
+  grid-area: not-active;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2>.field__item+.field__item {
+  margin-top: 0.5rem;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2 div.contextual {
+  display: none !important;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2>.field__item {
+  display: block;
+  position: static;
+  width: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2>.field__item>* {
+  pointer-events: none;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2>.field__item.active {
+  display: none;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column-2>.field__item>.tul-recruitment-media-bundle-remote-video iframe {
+  width: 100%;
+  aspect-ratio: 913/504;
+  pointer-events: none;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column>.field__item>.tul-recruitment-media-bundle-image {
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column>.field__item>.tul-recruitment-media-bundle-image>.field {
+  display: block;
+  width: 100%;
+  height: min-content;
+  position: unset;
+}
+
+.paragraph--type--gallery-vertical-video>.field--name-field-gallery-media>.column>.field__item>.tul-recruitment-media-bundle-image>.field>img {
+  display: block;
+  background: green;
+  width: min-content;
+  height: auto;
+  width: 100%;
+  margin: 0;
+}

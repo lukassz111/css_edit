@@ -1,0 +1,36 @@
+@import '../../../scss_includes/_backgrounds.scss';
+
+.block-system-breadcrumb-block {
+    font-size: 0.75rem;
+}
+
+.block-system-breadcrumb-block>.content .breadcrumb {
+    margin-bottom: 0;
+}
+
+
+.block-system-breadcrumb-block>.content .breadcrumb-item::before {
+    --bs-breadcrumb-divider: "→";
+}
+
+#block-breadcrumbs .breadcrumb-item+.breadcrumb-item::before {
+    --bs-breadcrumb-divider: '→';
+}
+
+.breadcrumb {
+    >.breadcrumb-item,
+    >.breadcrumb-item.active {
+        @include set-color('beigeLight');
+    }
+
+    >.breadcrumb-item>a {
+        text-decoration: none;
+
+        &:hover {
+            @include set-color('beigeLight');
+            text-decoration-color: var(--tul_recruitment-orange);
+            text-decoration-style: solid;
+            text-decoration-line: underline;
+        }
+    }
+}

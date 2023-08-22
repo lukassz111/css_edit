@@ -1,0 +1,142 @@
+@import '../../../scss_includes/_backgrounds.scss';
+
+.paragraph--type--container {
+    background-color: var(--tul-recruitment-blue-dark);
+    width: 100%;
+    --paragraph--type--container-padding: 0.5rem;
+    padding: var(--paragraph--type--container-padding);
+    border-width: 0;
+    border-color: var(--tul-recruitment-blue-dark);
+    border-style: solid;
+    border-radius: 0.56rem;
+    color: var(--tul-recruitment-beige-light);
+    padding-bottom: 3rem;
+
+    >.field--name-field-container-header {
+        margin-top: 2.62rem;
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    >.field--name-field-paragraph-body {
+        margin-top: 2rem;
+        padding: 0 1rem;
+        --paragraph--type--container-padding-body: 1.5rem;
+    }
+
+    @media(min-width: 720px) {
+        >.field--name-field-paragraph-body {
+            padding: 0 3rem;
+            --paragraph--type--container-padding-body: 3.5rem;
+        }
+    }
+
+    /* paragraph--type--steps-list in container */
+    >.field--name-field-paragraph-body .paragraph--type--steps-list .tul-step {
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* container-header-left-align */
+    &.tul-recruitment-style-container-header-left-align>.field--name-field-container-header {
+        text-align: left;
+        margin-top: 2rem;
+        padding: 0 3rem;
+    }
+
+    /* beige-light-dotted */
+    &.tul-recruitment-style-beige-light-dotted {
+        color: var(--tul-recruitment-blue-medium);
+        // background-image: radial-gradient(var(--tul-recruitment-beige-dots) 10%, var(--tul-recruitment-beige-light) 20%);
+        // background-size: 16px 16px;
+        @include set-background-dotted('beigeLight');
+    }
+
+    /* beige-medium-dotted */
+    &.tul-recruitment-style-beige-medium-dotted {
+        color: var(--tul-recruitment-navy-dark);
+        background-image: radial-gradient(var(--tul-recruitment-beige-medium) 10%, var(--tul-recruitment-beige-dark) 20%);
+        background-size: 16px 16px;
+    }
+
+    /* burgundy-dotted */
+    &.tul-recruitment-style-burgundy-dotted {
+        background-image: radial-gradient(var(--tul-recruitment-burgundy-light) 10%, var(--tul-recruitment-burgundy) 20%);
+        background-size: 16px 16px;
+    }
+
+    /* transparent */
+    &.tul-recruitment-style-transparent {
+        background-color: transparent;
+        color: inherit;
+    }
+
+    /* beige-dark */
+    &.tul-recruitment-style-beige-dark {
+        color: var(--tul-recruitment-blue-medium);
+        background: var(--tul-recruitment-beige-dark);
+    }
+
+    /* grey-lighter */
+    &.tul-recruitment-style-grey-lighter {
+        color: var(--tul-recruitment-blue-medium);
+        background: var(--tul-recruitment-grey-lighter);
+    }
+
+    /* white */
+    &.tul-recruitment-style-white {
+        background-color: var(--tul_recruitment-white);
+        color: var(--tul-recruitment-blue-medium);
+    }
+
+    /* white && slide(link-btn-transparent) */
+    &.tul-recruitment-style-white .tul-recruitment-style-link-btn-transparent.tul-recruitment-slide {
+        >.field--name-field-slide-link-label>a {
+            color: inherit;
+        }
+    }
+
+    /* white && slide(link-btn-transparent && icon-right-arrow) */
+    &.tul-recruitment-style-white .tul-recruitment-style-link-btn-transparent.tul-recruitment-style-icon-right-arrow.tul-recruitment-slide {
+        .field--name-field-slide-link-label>a>span.after-text {
+            background-image: var(--tul-svg-dark-arrow-btn-right);
+        }
+    }
+
+    /* blue-medium-dotted */
+    &.tul-recruitment-style-blue-medium-dotted {
+        // background-image: radial-gradient(var(--tul-recruitment-blue-light) 10%, var(--tul-recruitment-blue-medium) 20%);
+        // background-size: 16px 16px;
+        @include set-background-dotted('blueMedium');
+    }
+
+    /* blue-medium-dotted && node-article node-teaser */
+    &.tul-recruitment-style-blue-medium-dotted .node--type-article.node--view-mode-teaser {
+        // background-color: var(--tul-recruitment-blue-medium);
+        @include set-background('blueMedium');
+        // color: var(--tul_recruitment-white);
+        @include set-color('blueMedium');
+        border-width: 1pt;
+        border-style: solid;
+        border-color: var(--tul-recruitment-blue-light);
+
+        .field--name-field-media img {
+            width: calc(100% + 2pt);
+            margin-left: -1pt;
+            margin-right: -1pt;
+            margin-top: -1pt;
+        }
+    }
+
+    /* full-width */
+    &.tul-recruitment-style-full-width {
+        width: unset !important;
+
+        >.field {
+            width: 100%;
+            max-width: 1440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.theme-dark {.paragraph--type--tabs-group>nav>.nav.nav-tabs {
+    border-color: var(--tul-recruitment-beige-dark);
+    color: var(--tul-recruitment-blue-medium);
+}
+.paragraph--type--tabs-group>nav>.nav.nav-tabs>.nav-link {
+    background-color: var(--tul-recruitment-beige-light);
+    color: var(--tul-recruitment-blue-medium);
+}
+.paragraph--type--tabs-group>nav>.nav.nav-tabs>.nav-link.active {
+    border-color: var(--tul-recruitment-beige-dark);
+    background-color: var(--tul-recruitment-beige-dark);
+}
+} 

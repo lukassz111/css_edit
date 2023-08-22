@@ -1,0 +1,165 @@
+.paragraph--type--slider {
+    width: 100%;
+    height: 716px;
+    overflow: hidden;
+    --paragraph--type--slider--control-group-height: 3.0rem;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide>.carousel-control-group {
+    position: sticky;
+    z-index: 1;
+    bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide>.carousel-control-group>.carousel-control {
+    left: unset;
+    right: unset;
+    position: unset;
+    z-index: 1;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide>.field__items {
+    width: 100%;
+    height: 100%;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active {
+    width: 100%;
+    height: 100%;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end {
+    width: 100%;
+    height: 100%;
+}
+
+/* tul-recruitment-slide */
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active .tul-recruitment-slide,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start .tul-recruitment-slide,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end .tul-recruitment-slide {
+    width: 100%;
+    height: 100%;
+}
+
+/* paragraph--type--from-library */
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active .paragraph--type--from-library,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active .paragraph--type--from-library>.field--type-entity-reference-revisions {
+    width: 100%;
+    height: 100%;
+}
+
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start .paragraph--type--from-library,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end .paragraph--type--from-library,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start .paragraph--type--from-library>.field--name-paragraphs,
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end .paragraph--type--from-library>.field--name-paragraphs {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.paragraph--type--slider .carousel-control-group>.carousel-control {
+    background: transparent;
+    display: flex;
+    margin: 0;
+    border-radius: 2.5rem;
+    border-width: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-style: solid;
+    border-color: var(--tul-recruitment-beige-dark);
+    border-width: 1px;
+}
+
+.paragraph--type--slider .carousel-control-group>.carousel-control>.carousel-control-icon {
+    width: 1.25rem;
+    height: 0.875rem;
+}
+
+.paragraph--type--slider .carousel-control-group>.carousel-control-prev,
+.paragraph--type--slider .carousel-control-group>.carousel-control-next {
+    opacity: 1;
+}
+
+.paragraph--type--slider .carousel-control-next-icon {
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+}
+
+.paragraph--type--slider .carousel-control-prev-icon {
+    background-image: var(--tul-svg-dark-arrow-btn-left);
+}
+
+.paragraph--type--slider .slide-class-tul-recruitment-style-blue-medium-dotted .carousel-control-next-icon {
+    background-image: var(--tul-svg-light-arrow-btn-right);
+}
+
+.paragraph--type--slider .slide-class-tul-recruitment-style-blue-medium-dotted .carousel-control-prev-icon {
+    background-image: var(--tul-svg-light-arrow-btn-left);
+}
+
+
+@media (min-width: 1440px) {
+
+
+    .paragraph--type--slider {
+        height: 616px;
+    }
+}
+
+.tul-recruitment-style-burgundy-dotted.paragraph--type--slider {
+    background-image: radial-gradient(var(--tul-recruitment-burgundy-light) 10%, var(--tul-recruitment-burgundy) 20%);
+    background-size: 16px 16px;
+    color: var(--tul-recruitment-beige-light);
+    border-radius: 0.56rem;
+    padding: 1rem 0;
+}
+
+.tul-recruitment-style-burgundy-dotted.paragraph--type--slider>.field--name-field-list-slide .tul-recruitment-slide {
+    padding: 0 1rem;
+}
+
+
+.tul-recruitment-style-burgundy.paragraph--type--slider {
+    background: var(--tul-recruitment-burgundy);
+    color: var(--tul-recruitment-beige-light);
+    border-radius: 0.56rem;
+    padding: 1rem 0;
+}
+
+.tul-recruitment-style-burgundy.paragraph--type--slider>.field--name-field-list-slide .tul-recruitment-slide {
+    padding: 0 1rem;
+}
+
+.tul-recruitment-style-burgundy.paragraph--type--slider .carousel-control-next-icon,
+.tul-recruitment-style-burgundy-dotted.paragraph--type--slider .carousel-control-next-icon {
+    background-image: var(--tul-svg-light-arrow-btn-right);
+}
+
+.tul-recruitment-style-burgundy.paragraph--type--slider .carousel-control-prev-icon,
+.tul-recruitment-style-burgundy-dotted.paragraph--type--slider .carousel-control-prev-icon {
+    background-image: var(--tul-svg-light-arrow-btn-left);
+}
+
+.tul-recruitment-style-control-group-left-align.paragraph--type--slider>.field--name-field-list-slide>.carousel-control-group {
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.tul-recruitment-style-not-full-width.paragraph--type--slider > .field--name-field-list-slide {
+    max-width: 1440px;
+    margin: 0 auto;
+  }

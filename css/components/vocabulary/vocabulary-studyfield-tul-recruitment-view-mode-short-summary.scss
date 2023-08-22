@@ -1,0 +1,67 @@
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: min-content 1fr;
+    gap: 0% 0%;
+    grid-template-areas:
+        "header header"
+        "content btn";
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    height: 100%;
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>h2 {
+    grid-area: header;
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content {
+    grid-area: content;
+    // align-self: flex-end;
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch {
+    grid-area: btn;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch.studyfield_fav_btn_switch_disabled {
+    display: none;
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button {
+    border-radius: 30rem;
+    border-style: solid;
+    border-color: var(--tul-recruitment-blue-medium);
+    background-color: transparent;
+    border-width: 1pt;
+    padding: calc(0.625rem - 1pt);
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button.checked>.icon {
+    background-image: var(--tul-svg-banner-filled);
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button>.icon {
+    background-image: var(--tul-svg-banner);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 0.625rem;
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button:hover>.icon{
+    background-image: var(--tul-svg-banner-filled) !important;
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button.checked:hover>.icon {
+    background-image: var(--tul-svg-banner) !important;
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button>.studyfield_fav_btn_switch_add {
+    display: none;
+}
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.studyfield_fav_btn_switch>button>.studyfield_fav_btn_switch_remove {
+    display: none;
+}

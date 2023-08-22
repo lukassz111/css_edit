@@ -1,0 +1,19 @@
+.block-tul-font-resize {
+  width: min-content;
+}
+
+.block-tul-font-resize .wcag-font-small svg,
+.block-tul-font-resize .wcag-font-medium svg,
+.block-tul-font-resize .wcag-font-big svg,
+.block-tul-font-resize .wcag-font-small span,
+.block-tul-font-resize .wcag-font-medium span,
+.block-tul-font-resize .wcag-font-big span {
+  display: none;
+}
+
+.block-tul-font-resize .wcag-font-small:after,
+.block-tul-font-resize .wcag-font-medium:after,
+.block-tul-font-resize .wcag-font-big:after {
+  content: 'A';
+  font-family: 'Satoshi-Medium';
+}

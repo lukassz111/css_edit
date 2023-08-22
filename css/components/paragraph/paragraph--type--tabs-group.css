@@ -1,0 +1,35 @@
+.paragraph--type--tabs-group>nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.paragraph--type--tabs-group>nav>.nav.nav-tabs {
+    border-width: 1px;
+    border-color: var(--tul-recruitment-beige-dark);
+    color: var(--tul-recruitment-blue-medium);
+    border-style: solid;
+    border-radius: 30rem;
+    padding-left: 0;
+    padding-right: 0;
+    width: fit-content;
+    height: unset;
+}
+
+.paragraph--type--tabs-group>nav>.nav.nav-tabs>.nav-link {
+    margin: 0;
+    padding: 0;
+    border-radius: 30rem;
+    background-color: var(--tul-recruitment-beige-light);
+    color: var(--tul-recruitment-blue-medium);
+    padding: 0.68rem 1.25rem 0.81rem 1.25rem;
+    font-size: 1rem;
+}
+
+.paragraph--type--tabs-group>nav>.nav.nav-tabs>.nav-link.active {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--tul-recruitment-beige-dark);
+    background-color: var(--tul-recruitment-beige-dark);
+    font-size: 1rem;
+}

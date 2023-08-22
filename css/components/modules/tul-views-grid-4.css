@@ -1,0 +1,48 @@
+.tul-views-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 1.875rem;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+@media (min-width: 720px) {
+    .tul-views-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        grid-gap: 1.875rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .tul-views-grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        grid-gap: 1.875rem;
+    }
+}
+
+.tul-views-grid-4>.grid-item {
+    width: 100%;
+    height: 100%;
+}
+
+.tul-views-grid-4>.grid-item>.node {
+    width: 100%;
+    height: 100%;
+}
+
+.tul-views-grid-4>.grid-item>.taxonomy-term {
+    height: 100%;
+}
+
+.tul-views-grid-4>.grid-item>.taxonomy-term>.content {
+    height: 100%;
+}
+
+.tul-views-grid-4>.grid-item>.contextual-region>.contextual {
+    top: 3rem;
+}

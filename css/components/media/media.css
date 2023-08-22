@@ -1,0 +1,39 @@
+.image-style-avatar-512,
+.image-style-avatar-1440 {
+    display: block;
+    border-width: 0;
+    border-style: solid;
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+}
+
+.tul-recruitment-view-mode-icon-as-text {
+    display: inline-block;
+}
+
+.tul-recruitment-view-mode-icon-as-text>.field {
+    display: inline;
+    margin-right: 1ch;
+}
+
+
+*~.tul-recruitment-view-mode-icon-as-text>.field {
+    margin-left: 1ch;
+}
+
+.tul-recruitment-view-mode-icon-as-text>.field>img {
+    display: inline;
+    height: auto;
+    width: 1.5ch;
+}
+
+@media (min-width: 1440px) {
+    .tul-recruitment-view-mode-icon-as-text>.field>img {
+        margin-bottom: 0;
+    }
+}
+
+.tul-recruitment-view-mode-icon-as-text+p {
+    display: inline-block;
+}

@@ -1,0 +1,8 @@
+.view>.view-header-and-filters-container {
+    background-image: radial-gradient(var(--tul-recruitment-beige-medium) 10%, var(--tul-recruitment-beige-dark) 20%);
+    background-size: 16px 16px;
+    padding: 1rem;
+    border-radius: 0.56rem;
+    border-width: 0;
+    border-style: solid;
+}

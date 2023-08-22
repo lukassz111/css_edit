@@ -1,0 +1,22 @@
+.theme-dark {.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end {}
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active .tul-recruitment-slide,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start .tul-recruitment-slide,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end .tul-recruitment-slide {}
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active .paragraph--type--from-library,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.active .paragraph--type--from-library>.field--type-entity-reference-revisions {}
+.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start .paragraph--type--from-library,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end .paragraph--type--from-library,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-start .paragraph--type--from-library>.field--name-paragraphs,.paragraph--type--slider>.field--name-field-list-slide>.field__items>.field__item.carousel-item-end .paragraph--type--from-library>.field--name-paragraphs {}
+.paragraph--type--slider .carousel-control-group>.carousel-control {
+    background: transparent;
+    border-color: var(--tul-recruitment-beige-dark);
+}
+.paragraph--type--slider .carousel-control-next-icon {
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+}
+.paragraph--type--slider .carousel-control-prev-icon {
+    background-image: var(--tul-svg-dark-arrow-btn-left);
+}
+.paragraph--type--slider .slide-class-tul-recruitment-style-blue-medium-dotted .carousel-control-next-icon {
+    background-image: var(--tul-svg-light-arrow-btn-right);
+}
+.paragraph--type--slider .slide-class-tul-recruitment-style-blue-medium-dotted .carousel-control-prev-icon {
+    background-image: var(--tul-svg-light-arrow-btn-left);
+}
+@media (min-width: 1440px) {}
+} 

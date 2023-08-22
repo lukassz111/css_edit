@@ -12,19 +12,22 @@ program
   .option("-h, --help", "Display help")
   .option("-i, --in <string>", "Input File")
   .option("-o, --out <string>", "Output File")
-  .option("-dcr, --deleteCommentsRules <string>", "File *.json with rules to delete")
+  .option("-tJson, --toJson", "Convert scss/css to json file")
+  // .option("-dcr, --deleteCommentsRules <string>", "File *.json with rules to delete")
   .parse(process.argv);
 
 const options = program.opts();
 
 if(options.help) {
-    console.log(figlet.textSync("CSS Filter"));
+    console.log(figlet.textSync("CSS Edit"));
     program.outputHelp();
     exit(0);
 }
-else if(options.in && options.out && options.deleteCommentsRules) {
-  Main.ProgramRemoveCommentsAndRules(options.in,options.out,options.deleteCommentsRules);
+else if(options.in && options.out && options.toJson) {
+    Main.ProgramToJson(options.in, options.out);
 }
-else if(options.in && options.out) {
-    Main.Program(options.in, options.out);
+else {
+  console.log(figlet.textSync("CSS Edit"));
+  program.outputHelp();
+  exit(0);
 }

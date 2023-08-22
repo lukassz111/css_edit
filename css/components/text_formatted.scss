@@ -1,0 +1,211 @@
+/* * Text formatted */
+.text-formatted blockquote {
+  background-image: var(--tul-svg-quote-border);
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-size: 2.5rem;
+  padding-left: 5rem;
+}
+
+div.tul-text-mod-inline {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1439.98px) {
+  div.tul-text-mod-max-width-1440px {}
+
+  div.tul-text-mod-min-width-1440px {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  div.tul-text-mod-max-width-1440px {
+    display: none;
+  }
+
+  div.tul-text-mod-min-width-1440px {}
+}
+
+
+.text-formatted>.align-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.text-formatted>.align-center>.field--type-image {
+  margin: 0 0 !important;
+  float: unset !important;
+}
+
+.text-formatted>.tul-recruitment-view-mode-rounded-corners .field--type-image,
+.text-formatted>.tul-recruitment-view-mode-rounded-corners .field--type-image>.field__item,
+.text-formatted>.tul-recruitment-view-mode-rounded-corners .field--type-image>.field__item>img {
+  /* width: min(480px, 100%); */
+}
+
+.text-formatted>.tul-recruitment-view-mode-rounded-corners .field--type-image>.field__item>img {
+  border-width: 0;
+  border-radius: 0.56rem;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.text-formatted p,
+.text-formatted span {
+  line-height: normal;
+  word-wrap: break-word;
+}
+
+@media (min-width: 720px) {
+
+  .text-formatted p,
+  .text-formatted span {
+    word-wrap: normal;
+  }
+}
+
+.text-formatted>ul {
+  list-style: none
+}
+
+.text-formatted>ul>li {}
+
+.text-formatted>ul>li+li {
+  margin-top: 1rem;
+}
+
+.text-formatted>ul>li::before {
+  position: relative;
+  top: -0.3rem;
+  width: 3ch;
+  display: inline-block;
+  aspect-ratio: 1/1;
+  content: '    ';
+  background-image: var(--tul-svg-ul-item-arrow-icon);
+  white-space: pre-wrap;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.text-formatted>ul>li>* {
+  margin-left: 3ch;
+  padding-left: 1ch;
+  line-height: 1.2rem;
+}
+
+.text-formatted>ul>li>*:first-of-type {
+  margin-left: 0;
+}
+
+.text-formatted>ul>li>br {
+  display: none;
+}
+
+.text-formatted>ul>li>br+* {
+  display: block;
+}
+
+
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video,
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video>.field,
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video>.field>.field__item {
+  height: auto;
+}
+
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video.tul-recruitment-view-mode-text-full-width,
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video.tul-recruitment-view-mode-text-full-width>.field,
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video.tul-recruitment-view-mode-text-full-width>.field>.field__item {
+  width: 100%;
+}
+
+.text-formatted>.align-center.tul-recruitment-media-bundle-remote-video>.field>.field__item>iframe {
+  width: 100%;
+  aspect-ratio: 200/113;
+}
+
+
+.text-formatted .tul-recruitment-view-mode-screen-full-width>.field>.field__item {
+  width: 100vw;
+}
+
+.text-formatted .tul-recruitment-view-mode-screen-full-width>.field>.field__item>img {
+  width: 100%;
+}
+
+.text-formatted .tul-recruitment-view-mode-text-full-width>.field>.field__item {
+  width: 100%;
+}
+
+.text-formatted .tul-recruitment-view-mode-text-full-width>.field>.field__item>img {
+  width: 100%;
+}
+
+.text-formatted .field--type-image {
+  margin: 0 1em;
+}
+
+.text-formatted {
+  --text-width: 700px;
+}
+
+.text-formatted .tul-recruitment-view-mode-text-colorbox-1-2,
+.text-formatted .tul-recruitment-view-mode-text-1-2 {
+  max-width: calc(var(--text-width) / 2);
+}
+
+.text-formatted .tul-recruitment-view-mode-text-colorbox-1-3,
+.text-formatted .tul-recruitment-view-mode-text-1-3 {
+  max-width: calc(var(--text-width) / 3);
+}
+
+.text-formatted .tul-recruitment-view-mode-text-colorbox-2-3,
+.text-formatted .tul-recruitment-view-mode-text-2-3 {
+  max-width: calc(var(--text-width) / 0.666);
+}
+
+.text-formatted .tul-recruitment-view-mode-text-colorbox-1-4,
+.text-formatted .tul-recruitment-view-mode-text-1-4 {
+  max-width: calc(var(--text-width) / 4);
+}
+
+.text-formatted .tul-recruitment-view-mode-text-colorbox-3-4,
+.text-formatted .tul-recruitment-view-mode-text-3-4 {
+  max-width: calc(var(--text-width) * 0.75);
+}
+
+.text-formatted .tul-recruitment-view-mode-w200 {
+  width: 200px;
+  max-width: 200px;
+}
+
+.text-formatted figcaption {
+  margin: 0 1em;
+}
+
+.text-formatted figure>figcaption {
+  display: none;
+}
+
+.text-formatted .tul-recruitment-media-bundle-image img {
+  margin-bottom: 0;
+}
+
+.text-formatted figure.caption {
+  margin-bottom: 0;
+}
+
+.text-formatted a {
+  color: inherit;
+  text-decoration-color: var(--tul_recruitment-orange);
+  text-decoration-style: unset;
+  text-decoration-line: underline;
+
+  &:hover {
+    /*   text-decoration-color: #FFB48C; */
+    filter: sepia(60%);
+  }
+}

@@ -1,0 +1,166 @@
+@import '../../../scss_includes/_backgrounds.scss';
+
+.view-porownywarka-kierunkow form fieldset>legend {
+    display: none;
+}
+
+
+.view-porownywarka-kierunkow form .form-actions>.btn::after {
+
+    content: "";
+    background-image: var(--tul-svg-light-search-icon);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: contain;
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+.view-porownywarka-kierunkow form .form-item-matriculation-subjects-op-target-id {
+    display: none;
+}
+// .is_admin .view-porownywarka-kierunkow form .form-item-matriculation-subjects-op-target-id {
+//     display: block !important;
+// }
+
+.view-porownywarka-kierunkow>.view-content {
+    margin: 0 !important;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+    padding-top: 2.31rem;
+    padding-bottom: 3.09rem;
+}
+
+.view-porownywarka-kierunkow>.view-content>* {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0;
+    background: var(--tul_recruitment-white);
+    border-radius: 0.56rem;
+    border-width: 0;
+    border-style: solid;
+    padding: 1.25rem;
+    border-color: var(--tul-recruitment-beige-dark);
+}
+
+
+
+
+.view-porownywarka-kierunkow>.view-content>*:first-child {
+    margin-top: 0;
+}
+
+.view-porownywarka-kierunkow>.view-content>*>.taxonomy-term>.content {
+    color: var(--tul_recruitment-form-input-placeholder-text);
+}
+
+.view-porownywarka-kierunkow>.view-content>*>.taxonomy-term>h2>a .field--name-name {
+    color: var(--tul-recruitment-blue-medium);
+}
+
+.view-porownywarka-kierunkow>.view-content>*>.taxonomy-term>.content {
+
+    .field--name-field-study-semesters-no,
+    .field--name-field-study-seats {
+        .field__item.sublabel {
+            display: block !important;
+            padding-left: 1ch;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .view-porownywarka-kierunkow>.view-content {
+        gap: 0.5rem;
+        // background-image: radial-gradient(var(--tul_recruitment-view-background-dot-color) 10%, var(--tul-recruitment-beige-light) 20%);
+        // background-size: 16px 16px;
+        @include set-background-dotted('beigeLight');
+        padding-top: 3.37rem;
+        padding-bottom: 6.87rem;
+    }
+
+    .view-porownywarka-kierunkow>.view-content>* {
+        width: 32.38%;
+        min-width: 300px;
+        margin: 0;
+        border-width: 1px;
+        box-sizing: border-box;
+    }
+}
+
+.view-porownywarka-kierunkow form .form-item-field-matriculation-subjects-target-id,
+.view-porownywarka-kierunkow form .form-item-field-study-recruitment-deadline-target-id,
+.view-porownywarka-kierunkow form .form-item-field-study-lang-target-id,
+.view-porownywarka-kierunkow form .form-item-field-departament-target-id {
+    transition: 100ms;
+}
+
+.view-porownywarka-kierunkow form .tul-script-filters-advanced-search a {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.view-porownywarka-kierunkow form.tul-script-filters-expanded .tul-script-filters-advanced-search {
+    display: none;
+}
+
+.view-porownywarka-kierunkow form.tul-script-filters-not-expanded .form-item-field-study-mode-target-id,
+.view-porownywarka-kierunkow form.tul-script-filters-not-expanded .form-item-field-study-recruitment-deadline-target-id,
+.view-porownywarka-kierunkow form.tul-script-filters-not-expanded .form-item-field-study-lang-target-id,
+.view-porownywarka-kierunkow form.tul-script-filters-not-expanded .form-item-field-departament-target-id {
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+}
+
+
+/**
+ * Chmura tagów
+*/
+.view-porownywarka-kierunkow>.js-view-filters-selected {
+    width: 100%;
+    padding-top: 0.5rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: start;
+}
+
+.view-porownywarka-kierunkow>.js-view-filters-selected>button {
+    display: block;
+    word-break: keep-all;
+    min-width: fit-content;
+    padding: 0.31rem 0.62rem 0.31rem 0.62rem;
+    font-size: 0.81rem;
+    background-color: transparent;
+    border-style: solid;
+    text-transform: lowercase;
+    border-width: 1px;
+    border-radius: 30rem;
+    border-color: var(--tul-recruitment-blue-medium);
+}
+
+.view-porownywarka-kierunkow>.js-view-filters-selected>button::after {
+    content: '';
+    background-image: var(--tul-svg-dark-x);
+    display: inline-block;
+    width: 1rem;
+    height: 0.88rem;
+    /* aspect-ratio: 9/8; */
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: sub;
+    margin-left: 0.31rem;
+}
+

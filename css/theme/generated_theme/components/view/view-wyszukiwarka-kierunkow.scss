@@ -1,0 +1,20 @@
+.theme-dark {.view-wyszukiwarka-kierunkow form .form-actions>.btn::after {
+    background-image: var(--tul-svg-light-search-icon);
+}
+.view-wyszukiwarka-kierunkow>.view-content>* {
+    background: var(--tul_recruitment-white);
+    border-color: var(--tul-recruitment-beige-dark);
+}
+.view-wyszukiwarka-kierunkow>.view-content>*:first-child {}
+.view-wyszukiwarka-kierunkow>.view-content>*>.taxonomy-term>.content {
+    color: var(--tul_recruitment-form-input-placeholder-text);
+}
+.view-wyszukiwarka-kierunkow>.view-content>*>.taxonomy-term>h2>a .field--name-name {
+    color: var(--tul-recruitment-blue-medium);
+}
+@media (min-width: 1440px) {
+.view-wyszukiwarka-kierunkow>.view-content {
+        background-image: radial-gradient(var(--tul_recruitment-view-background-dot-color) 10%, var(--tul-recruitment-beige-light) 20%);
+    }
+.view-wyszukiwarka-kierunkow>.view-content>* {}
+}

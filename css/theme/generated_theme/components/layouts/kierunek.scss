@@ -1,0 +1,25 @@
+.theme-dark {.tul-recruitment-layout-kierunek,.tul-recruitment-layout-kierunek>* {}
+.tul-recruitment-layout-kierunek {
+  >.tul-recruitment-layout-region-tag {
+    >.tul-recruitment-layout-region-tag-inner>div>.block {
+      background: var(--tul-recruitment-beige-light);
+    }
+    >.tul-recruitment-layout-region-tag-inner>div>.block>.content>.field>.field__item,    >.tul-recruitment-layout-region-tag-inner>div>.block>.content>.field>.field__label {}
+  }
+  >.tul-recruitment-layout-region-card {
+    background: var(--tul_recruitment-white);
+    border-color: var(--tul-recruitment-beige-dark);
+  }
+}
+.tul-recruitment-layout-kierunek {
+  >.tul-recruitment-layout-region-body,  >.tul-recruitment-layout-region-body-full-width,  >.tul-recruitment-layout-region-body2 {
+    >.block:first-child {}
+  }
+}
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card .field--type-entity-reference>.field__items>.field__item::before {
+  content: ", "
+}
+@media (min-width: 1440px) {
+.tul-recruitment-layout-kierunek>* {}
+}
+} 

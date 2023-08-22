@@ -1,0 +1,46 @@
+.vocabulary-studyfield>.content>.field {
+  color: inherit;
+}
+
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>h2 a {
+  text-decoration: none;
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field {
+  color: var(--tul_recruitment-form-input-placeholder-text);
+  margin: 0;
+  padding: 0;
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field>.field__item {
+  display: inline;
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field>.field__item:after {
+  content: ",";
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field>.field__item:last-child:after {
+  content: "";
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field--name-field-study-degree:before {
+  content: var(--tul_recruitment_text-study-degree-label)": ";
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field--name-field-study-mode:before {
+  content: var(--tul_recruitment_text-study-mode-label)": ";
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field--name-field-study-semesters-no:before {
+  content: var(--tul_recruitment_text-study-no-semesters-label)": ";
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field--name-field-study-seats:before {
+  content: var(--tul_recruitment_text-study-no-seats-label)": ";
+}
+
+.vocabulary-studyfield.tul-recruitment-view-mode-short-summary>.content>.field--name-field-matriculation-subjects:before {
+  content: var(--tul_recruitment_text-study-matura-exam-subjects-label)": ";
+}

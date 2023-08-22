@@ -1,0 +1,22 @@
+span.tul-icon {
+    white-space: pre-wrap;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+span.tul-icon-cube {
+    background-image: var(--tul-svg-cube);
+}
+
+span.tul-icon-bulb {
+    background-image: var(--tul-svg-bulb);
+}
+
+span.tul-icon-arrow-right {
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+}
+
+span.tul-icon-eye-frame {
+    background-image: var(--tul-svg-eye-frame);
+}

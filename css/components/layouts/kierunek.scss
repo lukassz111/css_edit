@@ -1,0 +1,313 @@
+.tul-recruitment-layout-kierunek,
+.tul-recruitment-layout-kierunek>* {
+  transition: 300ms;
+}
+
+.tul-recruitment-layout-kierunek {
+  >.tul-recruitment-layout-region-tag {
+    height: 0;
+    position: relative;
+    width: 100%;
+
+    >.tul-recruitment-layout-region-tag-inner {
+      width: 100vw;
+      width: max(375px, 100vw);
+      margin-right: calc(0vw - var(--id-main-wrapper-margin));
+      margin-left: calc(0vw - var(--id-main-wrapper-margin));
+      overflow: auto;
+      position: relative;
+      padding-top: 0.625rem;
+    }
+
+    >.tul-recruitment-layout-region-tag-inner>div {
+      width: max-content;
+    }
+
+
+    >.tul-recruitment-layout-region-tag-inner>div>.block {
+      background: var(--tul-recruitment-beige-light);
+      padding: 0.375rem 0.625rem;
+      border-radius: 30rem;
+      border-width: 0;
+      border-style: solid;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+
+    >.tul-recruitment-layout-region-tag-inner>div>.block>.content {
+      display: inline;
+    }
+
+    >.tul-recruitment-layout-region-tag-inner>div>.block>.content>.field {
+      display: inline;
+      word-break: keep-all;
+      padding: 0;
+      margin: 0;
+    }
+
+    >.tul-recruitment-layout-region-tag-inner>div>.block>.content>.field>.field__item,
+    >.tul-recruitment-layout-region-tag-inner>div>.block>.content>.field>.field__label {
+      display: inline;
+      text-transform: lowercase;
+      padding: 0;
+      margin: 0;
+      word-break: keep-all;
+    }
+  }
+
+
+  >.tul-recruitment-layout-region-image {
+    width: 100vw;
+    // width: max(375px,100vw);
+    margin: 0 calc(0px - var(--id-main-wrapper-margin));
+    margin-bottom: -43px;
+    z-index: 0;
+
+    >.block>.content>.field--name-field-background-image {
+      margin: 0;
+    }
+
+    >.block>.content>.field--name-field-background-image img {
+      margin: 0;
+    }
+  }
+
+  >.tul-recruitment-layout-region-card {
+    background: var(--tul_recruitment-white);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.56rem;
+    border-color: var(--tul-recruitment-beige-dark);
+    padding: 7.73%;
+    z-index: 1;
+    position: relative;
+  }
+
+
+  >.tul-recruitment-layout-region-body-full-width {
+    width: 100vw;
+    // width: max(375px,100vw);
+    margin: 0 calc(0px - var(--id-main-wrapper-margin));
+    z-index: 0;
+
+    >.block-views {
+      >h2 {
+        margin-left: var(--id-main-wrapper-margin);
+        margin-right: var(--id-main-wrapper-margin);
+        margin-bottom: 1.875rem !important;
+      }
+    }
+  }
+}
+
+.tul-recruitment-layout-kierunek {
+
+  >.tul-recruitment-layout-region-body,
+  >.tul-recruitment-layout-region-body-full-width,
+  >.tul-recruitment-layout-region-body2 {
+    margin-top: 2.875rem;
+
+    .field>.field__label {
+      font-size: 1.75rem;
+    }
+
+    .field .field__item {
+      font-size: 1rem;
+    }
+
+    >.block {
+      margin-top: 2.875rem;
+    }
+
+    >.block:first-child {
+      margin-top: 0;
+    }
+  }
+
+  >.tul-recruitment-layout-region-body-full-width {
+    .field>.field__label {
+      margin: 0 var(--id-main-wrapper-margin);
+    }
+  }
+
+
+  >.tul-recruitment-layout-region-body,
+  >.tul-recruitment-layout-region-body2 {
+    >.block>.content>.field>.field__label {
+      margin-bottom: 1.875rem;
+    }
+  }
+}
+
+
+.tul-recruitment-layout-kierunek  .field--name-field-skills > .field__items > .field__item {
+  width: max-content;
+}
+
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card {
+  .field--type-integer,
+  .field--type-entity-reference {
+    margin: 0 0 1.2em;
+    >.field__label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-size: 0.6875rem;
+    }
+  }
+  .field > .field__items > .field__item.sublabel {
+    padding-left: 1ch;
+  }
+}
+
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card .field--type-entity-reference>.field__items {
+  display: flex;
+}
+
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card .field--type-entity-reference>.field__items>.field__item::after {
+  content: ", ";
+  white-space: pre-wrap;
+}
+
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card .field--type-entity-reference>.field__items>.field__item:last-child::after {
+  content: ""
+}
+
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card .field--name-name {
+  font-size: 1.5rem;
+  padding-bottom: 0.875rem;
+}
+
+
+.tul-recruitment-layout-kierunek .block-views-blockgraduate-opinion-block-1 {
+  width: 100vw;
+  // width: max(375px,100vw);
+  margin: 0 calc(0px - var(--id-main-wrapper-margin));
+}
+
+#layout-builder {
+  .tul-recruitment-layout-kierunek {
+    .tul-recruitment-layout-region-tag {
+      height: max-content !important;
+    }
+
+    .tul-recruitment-layout-region-tag>.tul-recruitment-layout-region-tag-inner {
+      width: 100% !important;
+      margin: 0 auto !important;
+      overflow: visible;
+      position: static;
+      padding-top: revert;
+    }
+
+    .tul-recruitment-layout-region-tag>.tul-recruitment-layout-region-tag-inner>div {
+      width: 100% !important;
+    }
+
+    >.tul-recruitment-layout-region-image {
+      width: 100%;
+      margin: unset;
+      margin-bottom: 0;
+      z-index: 0;
+    }
+
+    >.tul-recruitment-layout-region-body-full-width {
+      width: 100%;
+      margin: unset;
+      z-index: 0;
+    }
+  }
+}
+
+
+
+
+@media (min-width: 1440px) {
+  .tul-recruitment-layout-kierunek>* {
+    z-index: 2;
+  }
+
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-tag {
+    z-index: 2;
+  }
+
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-image {
+    z-index: 1;
+    position: absolute;
+  }
+
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card {
+    position: absolute;
+    padding: 2.77%;
+    margin-top: 0.625rem;
+    width: fit-content;
+    right: calc(60px - var(--id-main-wrapper-margin));
+  }
+
+  .tul-recruitment-layout-region-breadcrumbs {
+    padding-top: 42.57vw;
+  }
+
+  .tul-recruitment-layout-region-body {
+    position: relative;
+  }
+
+  #layout-builder {
+    .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-image {
+      position: revert;
+    }
+
+    .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-card {
+      position: revert;
+      padding: revert;
+      margin-top: revert;
+      width: revert;
+      right: revert;
+    }
+
+    .tul-recruitment-layout-region-body {
+      position: revert;
+    }
+  }
+}
+
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-body,
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-body2,
+.tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-body-full-width {
+  max-width: 750px;
+}
+
+.tul-recruitment-layout-kierunek .tul-views-swipe-inline--opinion-graduate>.tul-views-swipe-inline-scroll {
+  --tul-views-swipe-inline-width: calc((100% * var(--tul-views-swipe-inline-row-count)) / 2);
+}
+
+@media(min-width: 1920px) {
+
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-body2,
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-body,
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-breadcrumbs,
+  .tul-recruitment-layout-kierunek>.tul-recruitment-layout-region-body-full-width {
+    margin-left: 14.21vw;
+  }
+
+  .tul-recruitment-layout-region-breadcrumbs {
+    padding-top: 33.57vw;
+  }
+}
+
+
+
+.tul-recruitment-layout-region-card .field--name-field-matriculation-subjects>.field__items {
+  flex-wrap: wrap;
+}
+
+@media(min-width: 720px) {
+  .tul-recruitment-layout-region-card .field--name-field-matriculation-subjects>.field__items {
+    max-width: 50%;
+  }
+}
+
+@media(min-width: 1440px) {
+  .tul-recruitment-layout-region-card .field--name-field-matriculation-subjects>.field__items {
+    max-width: 375px;
+  }
+}

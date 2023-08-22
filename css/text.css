@@ -1,0 +1,8 @@
+/* Plik na teksty wstawiane z css'a */
+:root {
+    --tul_recruitment_text-study-degree-label: "Studia";
+    --tul_recruitment_text-study-mode-label: "Tryb";
+    --tul_recruitment_text-study-no-semesters-label: "Liczba semestrów";
+    --tul_recruitment_text-study-no-seats-label: "Liczba miejsc";
+    --tul_recruitment_text-study-matura-exam-subjects-label: "Przedmioty na maturze";
+}

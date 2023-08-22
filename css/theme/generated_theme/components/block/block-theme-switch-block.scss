@@ -1,0 +1,14 @@
+.theme-dark {.block-tul-theme-switch .btn-theme-switcher {
+  background-color: var(--tul_recruitment-white) !important;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-color: var(--tul-recruitment-beige-dark);
+}
+.block-theme-switch-block .tul-theme-switch-light:after,.block-theme-switch-block .tul-theme-switch-dark:after {}
+.block-theme-switch-block .tul-theme-switch-light:after {
+  background-image: var(--tul-svg-sun);
+}
+.block-theme-switch-block .tul-theme-switch-dark:after {
+  background-image: var(--tul-svg-circle-light-theme);
+}
+} 

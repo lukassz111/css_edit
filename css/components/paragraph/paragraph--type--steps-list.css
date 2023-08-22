@@ -1,0 +1,45 @@
+.paragraph--type--steps-list>.field--name-field-steps>.field__item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.paragraph--type--steps-list .tul-step-number {
+    border-style: solid;
+    border-color: var(--tul_recruitment-orange);
+    border-radius: 30rem;
+    padding: 0.5rem;
+    border-width: 1px;
+}
+
+
+/* .tul-recruitment-style-steps-list-horizontal */
+@media (min-width: 1440px) {
+
+    .tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items,
+    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: stretch;
+        justify-items: center;
+        gap: 1%;
+        flex-wrap: wrap;
+    }
+
+    .tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items>.field__item,
+    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items>.field__item {
+        width: 19%;
+    }
+
+    .tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items>.field__item>.tul-step,
+    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items>.field__item>.tul-step {
+        height: 100%;
+        padding-left: 1.33vw;
+        padding-right: 1.33vw;
+    }
+
+    .tul-recruitment-style-steps-list-horizontal .paragraph--type--steps-list>.field__items>.field__item>.paragraph--type--step-fontawesome,
+    .tul-recruitment-style-steps-list-horizontal.paragraph--type--steps-list>.field__items>.field__item>.paragraph--type--step-fontawesome {
+        justify-content: flex-start;
+    }
+}

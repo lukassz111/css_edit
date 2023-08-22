@@ -1,0 +1,44 @@
+.view-selected-for-you {
+    background-image: radial-gradient(var(--tul-recruitment-beige-dots) 10%, var(--tul-recruitment-beige-light) 20%);
+    background-size: 16px 16px;
+    width: 100vw;
+    position: relative;
+    left: calc(0px - var(--id-main-wrapper-margin));
+    padding-left: var(--id-main-wrapper-margin);
+    padding-right: var(--id-main-wrapper-margin);
+    padding-bottom: 1rem;
+    padding-top: 2.5rem;
+}
+
+.view-selected-for-you>.view-header {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.view-selected-for-you .view-filters {
+    display: none;
+}
+
+.view-selected-for-you>.view-content {
+    margin: 0;
+}
+
+.view-selected-for-you>.view-content>*>.taxonomy-term>h2>a .field--name-name {
+    color: var(--tul-recruitment-blue-medium);
+}
+
+.view-selected-for-you>.view-content>.views-row {
+    display: block;
+    background-color: var(--tul_recruitment-white);
+    border-radius: 0.56rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--tul-recruitment-beige-dark);
+    width: 100%;
+    margin: min(1rem, 4.26vw) auto;
+    padding: 1.25rem;
+}

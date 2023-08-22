@@ -1,0 +1,14 @@
+.view-article-carousel {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.view-article-carousel>.view-content {
+    width: 100%;
+    margin: 0;
+}
+
+.view-article-carousel>.view-content>.views-row {
+    width: 100%;
+}

@@ -1,0 +1,7 @@
+.tul-recruitment-bundle-usefull-links>.content>.field>.paragraph--type--usefull-links>.field>.field__label {
+    display: none;
+}
+
+.tul-recruitment-bundle-usefull-links>h2 {
+    margin-bottom: 1.875rem !important;
+}

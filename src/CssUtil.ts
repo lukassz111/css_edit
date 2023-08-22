@@ -1,212 +1,256 @@
-import { CssBlockNode } from "./CssBlockNode";
-import CssMultilineCommentNode from "./CssMultilineCommentNode";
-import { CssNodeDeleteFilter, CssRuleNodeDeleteFilter } from "./CssNodeDeleteFilter";
-import CssNodeType from "./CssNodeType";
-import { CssOnelineCommentNode } from "./CssOnelineCommentNode";
-import { CssRuleNode } from "./CssRuleNode";
-import { ICssNode } from "./ICssNode";
-
-function ParseCssString(cssString: string, depth: number = -1): Array<ICssNode> {
-    let Childrens: Array<ICssNode> = [];
-    let charIndex = 0;
-    let inMultilineComment = false;
-    let inOneLineComment = false;
-    let inBlock = false;
-    let content: string = '';
-    let defBlockContent: string = '';
-    let blockDepthCounter = 0;
-    let inBlokcMultilineComment = false;
-    while(charIndex < cssString.length) {
-        let processString = cssString.substring(charIndex);
-        if(!inMultilineComment && processString.startsWith('/*') && !inBlock) {
-            inMultilineComment = true;
-            content = '';
-            charIndex+=2;
+import { BufforText } from "./BufforText";
+import { CssNode, RuleCssNode } from "./CssNode/CssNode";
+import { MediaBlockCssNode } from "./CssNode/MediaBlockCssNode";
+import { SelectorBlockCssNode } from "./CssNode/SelectorBlockCssNode";
+import { ImportCssNode } from "./CssNode/ImportCssNode";
+import { MultiLineCommentCssNode } from "./CssNode/MultiLineCommentCssNode";
+import { OneLineCommentCssNode } from "./CssNode/OneLineCommentCssNode";
+import { UndefinedCssNode } from "./CssNode/UndefinedCssNode";
+function CompareCss(cssA: string, cssB: string): boolean {
+    const prepare = (v: string):string => { 
+        return v.replaceAll(' ','').replaceAll('\n','').replaceAll('\r','');
+    }
+    const hashCode = function(str: string) {
+        return str.split("").reduce(function(a, b) {
+          a = ((a << 5) - a) + b.charCodeAt(0);
+          return a & a;
+        }, 0);
+      }
+    let a = prepare(cssA);
+    let b = prepare(cssB);
+    if(a == b) {
+        let ok = (hashCode(a) == hashCode(b));
+        if(ok) {
+            return true;
         }
-        else if(inMultilineComment) {
-            if(!processString.startsWith('*/')) {
-                content += processString[0];
-                charIndex ++;
-            } else {
-                inMultilineComment = false;
-                charIndex +=2;
-                Childrens.push(new CssMultilineCommentNode(content));
-                content = '';
-            }
-        }
-        else if(!inOneLineComment && processString.startsWith('//') && !inBlock) {
-            inOneLineComment = true;
-            content = '';
-            charIndex+=2;
-        }
-        else if(inOneLineComment) {
-            if(processString.startsWith('\n')) {
-                inOneLineComment = false;
-                charIndex++;
-                Childrens.push(new CssOnelineCommentNode(content));
-                content = '';
-            } else {
-                content += processString[0];
-                charIndex ++;
-            }
-        }
-        else if(!inBlock && !inMultilineComment && !inOneLineComment) {
-            if(!processString.startsWith('{')) {
-                if(processString.startsWith(';')) {
-                    content = content.trim();
-                    Childrens.push(new CssRuleNode(content));
-                    content = '';
-                    charIndex ++;
-                } else if(processString.length == 1) {
-                    content += processString[0];
-                    content = content.trim();
-                    Childrens.push(new CssRuleNode(content));
-                    content = '';
-                    charIndex ++;
+    }
+    console.log({cssA,cssB});
+    return false;
+}
+function ParseCssStringSplitToSmallChunks(cssString: string, enabledCheck: boolean = true): string[] {
+    enum StatusParsing {
+        Defalut,
+        OneLineComment,
+        MultilineComment,
+        Block,
+        BlockMultilineComment,
+        StringDoubleQuote,
+        StringSingleQuote
+    }
+    let statusParsing: StatusParsing = StatusParsing.Defalut;
+    let currentIndex = 0;
+    let currentText = new BufforText();
+    let currentLine = '';
+    let blockDepth = '';
+    let parsedData = [];
+    while(currentIndex < cssString.length) {
+        switch(statusParsing) {
+            case StatusParsing.Defalut:
+                currentText.Text += cssString[currentIndex];
+                // console.log('#'+currentText.Text+'#');
+                if(cssString[currentIndex] == '"') {
+                    statusParsing = StatusParsing.StringDoubleQuote;
                 } 
-                else {
-                    content += processString[0];
-                    charIndex ++;
+                // else if(cssString[currentIndex] == "'") {
+                //     statusParsing = StatusParsing.StringSingleQuote;
+                // }
+                else if(currentText.Text.trimStart().startsWith('//')) {
+                    statusParsing = StatusParsing.OneLineComment;
                 }
-            }
-            else {
-                defBlockContent = content;
-                content = '';
-                charIndex ++;
-                inBlock = true;
-                blockDepthCounter = 0;
-            }
+                else if(currentText.Text.trimStart().startsWith('/*')) {
+                    statusParsing = StatusParsing.MultilineComment;
+                }
+                else if(cssString[currentIndex] == '{') {
+                    statusParsing = StatusParsing.Block;
+                    blockDepth = blockDepth+'{';
+                }
+                else if(cssString[currentIndex] == '\n') {
+                    // When achived endline character
+                    let lastLine1 = currentText.LastLine(1).trim();
+                    
+                    let regExImportRule = /^@import[^;]{1,};$/;
+                    let regCssVariableRule = /^--[^:]{1,}:\s{0,}/;
+                    let regCssRule = /^[A-Za-z][^:]{1,}:\s{0,}/;
+                    let oneLineRule = false;
+                    if(regExImportRule.test(lastLine1)) {
+                        oneLineRule = true;
+                    }
+                    else if(regCssVariableRule.test(lastLine1) && lastLine1.endsWith(';')) {
+                        oneLineRule = true
+                    }
+                    else if(regCssRule.test(lastLine1) && lastLine1.endsWith(';')) {
+                        oneLineRule = true
+                    }
+                    if(oneLineRule) {
+                        parsedData.push(lastLine1);
+                        currentText.RemoveLastLine(1);
+                    }
+                }
+                else if(/^[A-Za-z]{1,}/.test(currentText.Text.trim()) && currentText.Text.trim().endsWith(';')) {
+                    parsedData.push(currentText.Text);
+                    currentText.Text = '';
+                }
+                break;
+            case StatusParsing.Block:
+                currentText.Text += cssString[currentIndex];
+                if(currentText.Text.endsWith('/*')) {
+                    statusParsing = StatusParsing.BlockMultilineComment;
+                    break;
+                }
+                else if(cssString[currentIndex] == '{') {
+                    blockDepth = blockDepth+'{';
+                } else if(cssString[currentIndex] == '(') {
+                    blockDepth = blockDepth+'(';
+                } else if(cssString[currentIndex] == '}') {
+                    blockDepth = blockDepth.substring(0,blockDepth.length-1);
+                } else if(cssString[currentIndex] == ')') {
+                    blockDepth = blockDepth.substring(0,blockDepth.length-1);
+                }
+                if(blockDepth == '') {
+                    parsedData.push(currentText.Text);
+                    currentText.Text = '';
+                    statusParsing = StatusParsing.Defalut;
+                }
+                break;
+            case StatusParsing.OneLineComment:
+                currentText.Text += cssString[currentIndex];
+                if(cssString[currentIndex] == '\r') {
+                    currentIndex++;
+                    currentText.Text += cssString[currentIndex];
+                }
+                if(currentText.Text.endsWith('\n')) {
+                    parsedData.push(currentText.Text);
+                    currentText.Text = '';
+                    statusParsing = StatusParsing.Defalut;
+                }
+                break;
+            case StatusParsing.MultilineComment:
+                currentText.Text += cssString[currentIndex];
+                if(currentText.Text.endsWith('*/')) {
+                    parsedData.push(currentText.Text);
+                    statusParsing = StatusParsing.Defalut;
+                    currentText.Text = ''
+                }
+                break;
+            case StatusParsing.BlockMultilineComment:
+                currentText.Text += cssString[currentIndex];
+                if(currentText.Text.endsWith('*/')) {
+                    statusParsing = StatusParsing.Block;
+                }
+                break;
+            case StatusParsing.StringDoubleQuote: 
+                currentText.Text += cssString[currentIndex];
+                if(cssString[currentIndex] == "\\") {
+                    currentIndex++;
+                    if(cssString[currentIndex] == '"') {
+                        currentText.Text += cssString[currentIndex];
+                    }
+                }
+                else if(cssString[currentIndex] == '"') {
+                    statusParsing = StatusParsing.Defalut;
+                }
+                break;
+            // case StatusParsing.StringSingleQuote: 
+            //     currentText.Text += cssString[currentIndex];
+            //     if(cssString[currentIndex] == "\\") {
+            //         currentIndex++;
+            //         if(cssString[currentIndex] == "'") {
+            //             currentText.Text += cssString[currentIndex];
+            //         }
+            //     }
+            //     else if(cssString[currentIndex] == "'") {
+            //         statusParsing = StatusParsing.Defalut;
+            //     }
+            //     break;
+
+            default:
+                console.log('statusParsing is not implemnented for: '+statusParsing);
         }
-        else if(inBlock && !inMultilineComment && !inOneLineComment) {
-            if(processString.startsWith('/*') && !inBlokcMultilineComment) {
-                content += '/*';
-                charIndex +=2;
-                inBlokcMultilineComment = true;
-            } else if(processString.startsWith('*/') && inBlokcMultilineComment) {
-                content += '*/';
-                charIndex +=2;
-                inBlokcMultilineComment = false;
-            }
-            else if(processString.startsWith('{') && !inBlokcMultilineComment) {
-                content += processString[0];
-                charIndex++;
-                blockDepthCounter++;
-            }
-            else if(processString.startsWith('}') && !inBlokcMultilineComment) {
-                if(blockDepthCounter == 0) {
-                    inBlock = false;
-                    charIndex ++;
-                    content = content.trim();
-                    defBlockContent = defBlockContent.trim();
-                    Childrens.push(CssBlockNode.CreateFromContentString(defBlockContent,content,depth+1));
-                    
-                    content = '';
-                    defBlockContent = '';
-                    
-                } else {
-                    content += processString[0];
-                    charIndex++;
-                    blockDepthCounter--;
-                }
-            } else {
-                content += processString[0];
-                charIndex++;
-            }
+        currentIndex++;
+    }
+    if(!CompareCss(parsedData.join('\n'),cssString) && enabledCheck) {
+        throw new Error('Failed to parse SCSS/CSS string');
+    }
+    return parsedData;
+}
+function ParseCssSmallChunksToJson(smallChunks: string[]): any {
+    let data: CssNode[] = [];
+    smallChunks.forEach(chunk=>{
+        if(chunk.trim().startsWith('/*')) {
+            let i = new MultiLineCommentCssNode(chunk);
+            data.push(i);
+        }
+        else if(chunk.trim().startsWith('//')) {
+            let i = new OneLineCommentCssNode(chunk);
+            data.push(i);
+        }
+        else if(chunk.trim().startsWith('@import')) {
+            let i = new ImportCssNode(chunk);
+            data.push(i);
+        }
+        //Block with selector
+        else if(
+            (
+                /^(#|\.|\:)?[A-Za-z][A-Za-z0-9 >,\*#_+\:\.\-\(\)]{1,}\s{0,}\{/
+                .test(
+                    chunk.trim().replaceAll('\r','').replaceAll('\n','')
+                )
+                ||
+                /^\*([A-Za-z0-9 >,\*#_+\:\.\-\(\)]{1,})?\s{0,}\{/
+                .test(
+                    chunk.trim().replaceAll('\r','').replaceAll('\n','')
+                )
+            )
+            &&
+            chunk.trim().endsWith('}')
+            ) {
+            let i = new SelectorBlockCssNode(chunk);
+            data.push(i);
+        }
+        //Block width media query
+        else if(
+            (
+                /^@media\s{0,}(\([a-z\-]{1,}:\s{0,}\d{1,}[a-z]{1,}\)(?:\s{1,}[a-z]{1,}\s{1,})?){1,}\s{0,}\{/
+                .test(
+                    chunk.trim().replaceAll('\r','').replaceAll('\n','')
+                )
+                ||
+                chunk.trim().startsWith('@-moz-document url-prefix()')
+            )
+            &&
+            chunk.trim().endsWith('}')
+        ) {
+            let i = new MediaBlockCssNode(chunk);
+            data.push(i);
+        }
+        else if(
+            (
+                /^[A-Za-z][^:]{1,}:\s{0,}/.test(chunk.trim())
+            )
+            &&
+            chunk.trim().endsWith(';')
+        ) {
+            let i = new RuleCssNode(chunk);
+            data.push(i);
         }
         else {
-            charIndex ++;
+            let i = new UndefinedCssNode(chunk);
+            data.push(i);
         }
-    }
-    return Childrens;
+    });
+    let dataJson = data.map((v) => {return v.toJson()});
+    return { 'child': dataJson };
 }
-
-
-
-function CreateFilterDeleteCssTypeNode(cssTypeNode: Array<CssNodeType>): CssNodeDeleteFilter {
-    return (cssNode: ICssNode) => {
-        let d: boolean = false;
-        for(let i = 0; i < cssTypeNode.length; i++) {
-            if(cssTypeNode[i].Type == cssNode.typeCssNode().Type) {
-                d = true;
-                break;
-            }
-        }
-        return d;
-    }
-}
-
-function CreateFilterDeleteCssRuleNode(cssRuleNodeDeleteFilter: CssRuleNodeDeleteFilter): CssNodeDeleteFilter {
-    return (cssNode: ICssNode) => {
-        if(cssNode.typeCssNode().Type == CssNodeType.Rule().Type) {
-            return cssRuleNodeDeleteFilter(cssNode as CssRuleNode)
-        } else {
-            return false;
-        }
-    }
-}
-
-function FilterDeleteCssRuleNodeByObject(rulesDelete: any) {
-    return CreateFilterDeleteCssRuleNode( (cssNode: CssRuleNode) => {
-        let cssNodeRule = cssNode.rule.trim();
-        let cssNodeValue = cssNode.value.trim();
-        for(let k in rulesDelete) {
-            let v = rulesDelete[k];
-            let match = false;
-            if(v == null || typeof v == 'string') {
-
-                let kMatch = false;
-                let vMatch = false;
-                
-                if(k == cssNodeRule) {
-                    kMatch = true;
-                } else if(k.endsWith('*') && cssNodeRule.startsWith(k.substring(0,k.length-1))) {
-                    kMatch = true;
-                } else if(k.startsWith('*') && cssNodeRule.endsWith(k.substring(1))) {
-                    kMatch = true;
-                }
-
-                if(v == null) {
-                    vMatch = true;
-                } else if(v == cssNodeValue) {
-                    vMatch = true;
-                    
-                } else if(v.endsWith('*') && cssNodeValue.startsWith(v.substring(0, v.length -1))) {
-                    vMatch = true;
-                } else if(v.startsWith('*') && cssNodeValue.endsWith(v.substring(1))) {
-                    vMatch = true;
-                }
-
-                if(kMatch == true && vMatch == true) {
-                    return true;
-                }
-
-            }
-            if(match) {
-                return true;
-            }
-        }
-        return false;
-    })
-}
-
-
-const Offset: string = '    ';
-function GenOffset(str: string|null = null, rep: number = 1) {
-    if(str == null) {
-        str = Offset;
-    }
-    let x = '';
-    for(let i = 0; i < rep; i++) {
-        x += str;
-    }
-    return x;
+function CssToJson(cssString: string): any {
+    let cssStringChunks = CssUtil.ParseCssStringSplitToSmallChunks(cssString);
+    let json = CssUtil.ParseCssSmallChunksToJson(cssStringChunks);
+    return json;
 }
 
 const CssUtil = {
-    ParseCssString,
-    CreateFilterDeleteCssTypeNode,
-    CreateFilterDeleteCssRuleNode,
-    GenOffset,
-    FilterDeleteCssRuleNodeByObject
+    ParseCssStringSplitToSmallChunks,
+    ParseCssSmallChunksToJson,
+    CssToJson,
+    CompareCss
 };
 export default CssUtil;

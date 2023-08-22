@@ -1,0 +1,39 @@
+/* 
+    Nie wiem jak to jeszcze nazwać proszę się nie sugerować
+    Plik na potrzeby wspólne jeśli będzie więcej rodzajów kroków
+    np z obrazkiem zamiast ikony z fontawesome
+ */
+
+ .tul-step {
+  width: 100%;
+  background-color: var(--tul-recruitment-blue-dark);
+  color: var(--tul-recruitment-beige-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  border-width: 0;
+  background-color: var(--tul-recruitment-blue-medium);
+  border-style: solid;
+  border-radius: 0.56rem;
+  padding: 2rem 5.33vw;
+  padding: 2rem min(5.33vw, 6rem);
+}
+
+.tul-step>.field--name-field-step-header {
+  font-size: 1.25rem;
+}
+
+.tul-step .text-formatted a {
+  color: inherit;
+  text-decoration-color: var(--tul_recruitment-orange);
+  text-underline-offset: 0.5rem;
+}
+
+.tul-step .text-formatted {
+  color: inherit;
+  line-height: 1.5rem;
+  font-size: 0.75rem;
+}

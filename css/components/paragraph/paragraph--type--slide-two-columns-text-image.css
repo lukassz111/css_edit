@@ -1,0 +1,143 @@
+.paragraph--type--slide-two-columns-text-image {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content min-content;
+    grid-template-areas:
+        "text"
+        "link"
+        "image";
+    grid-auto-columns: auto;
+    gap: 1rem 1rem;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.paragraph--type--slider .paragraph--type--slide-two-columns-text-image {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content min-content var(--paragraph--type--slider--control-group-height);
+    grid-template-areas:
+        "text"
+        "link"
+        "image"
+        ".";
+}
+
+.paragraph--type--slide-two-columns-text-image>.field--name-field-slide-text {
+    grid-area: text;
+}
+
+.paragraph--type--slide-two-columns-text-image>.field--name-field-slide-link-label {
+    grid-area: link;
+}
+
+.paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media {
+    grid-area: image;
+}
+
+.paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media,
+.paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media img {
+    margin-bottom: 0;
+    border-width: 0;
+    border-style: solid;
+    border-radius: 0.56rem;
+}
+
+
+@media (min-width: 1440px) {
+    .paragraph--type--slide-two-columns-text-image {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr min-content;
+        grid-template-areas:
+            "text image"
+            "link image";
+        justify-content: space-evenly;
+        align-content: space-evenly;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .paragraph--type--slider .paragraph--type--slide-two-columns-text-image {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr min-content var(--paragraph--type--slider--control-group-height);
+        grid-template-areas:
+            "text image"
+            "link image"
+            ". .";
+    }
+
+    .paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media {
+        justify-self: stretch;
+        align-self: stretch;
+    }
+
+    .paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media .contextual-region {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media .field--type-image {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media .field--type-image>.field__item {
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media .field--type-image>.field__item img {
+        width: max-content;
+        height: 100%;
+    }
+}
+
+
+
+/* 
+    Slide ale bez slidera
+*/
+.field--name-field-body-paragraphs>.field__item>.paragraph--type--slide-two-columns-text-image>.field--name-field-slide-media img {
+    width: 100%;
+    height: max-content;
+}
+
+/* 
+    tul-recruitment-style-image-on-left-column
+*/
+.tul-recruitment-style-image-on-left-column.paragraph--type--slide-two-columns-text-image {
+    grid-template-areas:
+        "image"
+        "link"
+        "text";
+}
+.paragraph--type--slider .tul-recruitment-style-image-on-left-column.paragraph--type--slide-two-columns-text-image {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content min-content var(--paragraph--type--slider--control-group-height);
+    grid-template-areas:
+        "image"
+        "link"
+        "text"
+        ".";
+}
+@media (min-width: 1440px) {
+    .tul-recruitment-style-image-on-left-column.paragraph--type--slide-two-columns-text-image {
+        grid-template-areas:
+            "image text"
+            "image link";
+    }
+
+    .paragraph--type--slider .tul-recruitment-style-image-on-left-column.paragraph--type--slide-two-columns-text-image {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr min-content var(--paragraph--type--slider--control-group-height);
+        grid-template-areas:
+            "image text"
+            "image link"
+            ". .";
+    }
+}

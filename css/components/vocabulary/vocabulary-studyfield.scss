@@ -1,0 +1,22 @@
+.vocabulary-studyfield .field--name-field-skills .field__items {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.vocabulary-studyfield .field--name-field-skills .field__item {
+    font-size: 0.8125rem;
+    margin-top: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    background-color: var(--tul-recruitment-beige-dark);
+    display: block;
+    width: min-content;
+    height: min-content;
+    border-style: solid;
+    border-radius: 30rem;
+    border-width: 0;
+}
+
+
+@import 'vocabulary-studyfield-tul-recruitment-view-mode-short-summary.scss';

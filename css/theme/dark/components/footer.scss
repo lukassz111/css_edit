@@ -1,0 +1,31 @@
+.theme-dark {
+    .site-footer {
+        background: var(--tul-recruitment-navyblack-dark);
+        color: var(--tul-recruitment-beige-light);
+    }
+
+    .site-footer>* {
+        background: var(--tul-recruitment-navy-dark);
+        color: var(--tul-recruitment-beige-light);
+    }
+
+    .site-footer>div {
+        border-color: var(--tul-recruitment-navy-dark);
+    }
+
+    .site-footer .site-footer__top>.region>.block-menu {
+        background: var(--tul-recruitment-navy-dark);
+        color: var(--tul-recruitment-beige-light);
+    }
+
+    .site-footer .site-footer__top>.region>.block-menu .nav {
+        background: var(--tul-recruitment-navy-dark);
+        color: var(--tul-recruitment-beige-light);
+    }
+
+    .site-footer .site-footer__top>.region>.block-menu .nav>.nav-item,
+    .site-footer .site-footer__top>.region>.block-menu .nav>.nav-item>.nav-link {
+        background: var(--tul-recruitment-navy-dark);
+        color: var(--tul-recruitment-beige-light);
+    }
+}

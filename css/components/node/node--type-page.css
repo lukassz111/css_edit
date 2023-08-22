@@ -1,0 +1,4 @@
+.node--type-page.node--view-mode-full>.node__content>.field--name-body {
+    max-width: 750px;
+    margin: 0 auto;
+}

@@ -1,0 +1,8 @@
+.paragraph--type--step-fontawesome {
+
+}
+
+.paragraph--type--step-fontawesome>.field--name-field-step-icon-icon {
+  color: var(--tul_recruitment-orange);
+  font-size: 4.37rem;
+}

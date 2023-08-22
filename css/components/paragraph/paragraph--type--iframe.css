@@ -1,0 +1,20 @@
+
+
+
+.paragraph--type--iframe {
+    max-width: 100%;
+  }
+  .paragraph--type--iframe > .field--name-field-html {
+    max-width: 100%;
+  /*   aspect-ratio: 516/688; */
+    display: flex;
+  }
+  .paragraph--type--iframe > .field--name-field-html > iframe {
+    width: 100%;
+    display: block;
+  }
+  
+  .paragraph--type--iframe > .field--name-field-html > iframe[src*="www.google.com/maps"] {
+    width: 100%;
+    aspect-ratio: 516/688;
+  }

@@ -1,0 +1,16 @@
+.theme-dark {.tul-recruitment-bundle-button-1 .content a>button {
+    background-color: var(--tul_recruitment-orange);
+    border-color: var(--tul_recruitment-orange);
+    color: var(--tul_recruitment-text-on-bg-orange);
+}
+.tul-recruitment-style-icon-right-arrow.tul-recruitment-bundle-button-1 .content button>span::after {
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+}
+.tul-recruitment-style-no-background.tul-recruitment-bundle-button-1 .content a>button {
+    background-color: transparent;
+    border-color: transparent;
+}
+.tul-recruitment-style-icon-before-switch-website.tul-recruitment-bundle-button-1 .content button>span::before {
+    background-image: var(--tul-svg-dark-switch-website);
+}
+} 

@@ -1,0 +1,74 @@
+.view-article-science-club {
+
+  >.view-content>.views-row {
+    margin: 0;
+    padding: 0;
+  }
+
+  >.view-content>.views-row>.node--type-article {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* View pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pagination>.page-item {
+    color: var(--tul-recruitment-blue-grey);
+    background-color: transparent;
+  }
+
+  .pagination>.page-item.active {
+    color: var(--tul-recruitment-blue-medium);
+    background-color: transparent;
+  }
+
+  .pagination>.page-item>a,
+  .pagination>.page-item.active>a,
+  .pagination>.page-item>span,
+  .pagination>.page-item.active>span {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  .pagination>.page-item>a,
+  .pagination>.page-item>span {
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .pagination>.page-item {
+    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    border-width: 1pt;
+    border-radius: 30rem;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  .pagination>.page-item.page-previous,
+  .pagination>.page-item.page-next {
+    border-color: var(--tul-recruitment-beige-dark);
+  }
+
+  .pagination>.page-item .icon {
+    white-space: pre-wrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+  }
+
+  .pagination>.page-item.page-previous .icon {
+    background-image: var(--tul-svg-dark-arrow-btn-left);
+  }
+
+  .pagination>.page-item.page-next .icon {
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+  }
+
+}

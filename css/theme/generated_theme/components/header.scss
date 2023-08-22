@@ -1,0 +1,37 @@
+.theme-dark {@media (min-width: 376px) {}
+@media (min-width: 376px) {}
+#header>#navbar-top {
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+    background: transparent;
+}
+@media (max-width: 375px) {}
+#header>#navbar-main {
+    background: var(--tul-recruitment-beige-light);
+    color: var(--tul-recruitment-blue-medium);
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+}
+#header>#navbar-main>.navbar {
+    background: inherit;
+    color: inherit;
+}
+#header>#navbar-main #block-glownanawigacja,#header>#navbar-main #block-glownanawigacja a {
+    color: var(--tul_recruitment-header-menu-text);
+}
+#header>#navbar-main button.navbar-toggle {
+    background-color: transparent;
+}
+@media (min-width: 376px) {}
+#header>#navbar-main.tul-recruitment-navbar-main-overflow>.navbar,#header>#navbar-main.tul-recruitment-navbar-main-overflow>.navbar+.max-w-375px-hide {}
+#header>#navbar-offcanvas {
+    background-color: var(--tul-recruitment-beige-light);
+}
+#header>#navbar-offcanvas>.offcanvas-header-top {
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+}
+#header>#navbar-offcanvas #navbar-offcanvas-close {
+    border-bottom: 1px solid var(--tul_recruitment-border);
+}
+#header>#navbar-offcanvas>.offcanvas-header {
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+}
+} 

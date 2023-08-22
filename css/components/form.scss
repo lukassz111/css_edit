@@ -1,0 +1,204 @@
+form {
+
+    >div,
+    >.row {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+        >* {
+            width: 100%;
+            margin: 0;
+
+        }
+    }
+
+    @media (min-width: 1440px) {
+
+        >div>*,
+        >.row>* {
+            width: calc(50% - 1.25rem);
+            margin: 0;
+
+            &:nth-last-child(2n) {
+                margin-left: 1.25rem;
+            }
+
+            &:nth-last-child(2n+1) {
+                margin-right: 1.25rem;
+            }
+
+            &:first-child,
+            &:last-child {
+                width: 100%;
+                margin: 0;
+            }
+
+        }
+    }
+
+    fieldset,
+    .form-type-select,
+    .form-type-textfield,
+    .form-type-password {
+        margin-bottom: 1.56rem !important;
+        padding-left: 0;
+        padding-right: 0;
+
+        &.mb-3 {
+            //Overwrite bootstrap
+            margin-bottom: 1.56rem !important;
+        }
+
+    }
+
+    fieldset>legend,
+    .form-type-select>label,
+    .form-type-textfield>label,
+    .form-type-password>label {
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: var(--tul-recruitment-blue-medium);
+        letter-spacing: 0.1rem;
+    }
+
+    fieldset .fieldset-wrapper {
+        >.radio {
+            padding: 0;
+            margin: 0 auto;
+            width: fit-content;
+            display: flex;
+            overflow: hidden;
+            background-color: var(--tul_recruitment-form-radio-button-not-active);
+            border-style: solid;
+            border-width: 0;
+            border-radius: 30rem;
+
+            >.radio {
+                padding: 0;
+                margin: 0;
+            }
+
+            >.radio:first-of-type>label {
+                border-top-left-radius: 30rem;
+                border-bottom-left-radius: 30rem;
+            }
+
+            >.radio:last-of-type>label {
+                border-top-right-radius: 30rem;
+                border-bottom-right-radius: 30rem;
+            }
+
+            >.radio>input {
+                position: absolute !important;
+                clip: rect(0, 0, 0, 0);
+                height: 1px;
+                width: 1px;
+                border: 0;
+                overflow: hidden;
+            }
+
+            >.radio>label {
+                background-color: var(--tul_recruitment-form-radio-button-not-active);
+                color: var(--tul-recruitment-blue-medium);
+                font-size: 1rem;
+                line-height: 1;
+                text-align: center;
+                padding: 1rem 1rem;
+                border-style: solid;
+                border-radius: 0;
+                border-width: 0;
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            >.radio>input:checked+label {
+                background-color: var(--tul-recruitment-beige-light);
+                border-radius: 30rem;
+            }
+        }
+
+        &>legend {
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+    }
+
+    .form-type-textfield,
+    .form-type-password {
+        input {
+            border-radius: 30rem !important;
+            border-width: 0;
+            border-style: solid;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            color: var(--tul-recruitment-blue-medium);
+        }
+    }
+
+    .form-type-select {
+        select {
+            border-radius: 30rem !important;
+            border-width: 0;
+            border-style: solid;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            color: var(--tul-recruitment-blue-medium);
+
+            &[data-val="All"] {
+                color: var(--tul_recruitment-form-input-placeholder-text);
+            }
+        }
+    }
+
+    .form-actions>.btn {
+        border-radius: 30rem !important;
+        border-width: 0;
+        border-style: solid;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: var(--tul_recruitment-white);
+        background-color: var(--tul-recruitment-blue-medium);
+        width: fit-content;
+        margin: 0 auto;
+        display: block;
+    }
+
+}
+
+
+form.user-login-form,
+form.user-pass {
+    width: fit-content;
+    border-radius: 0.56rem;
+    border-width: 1pt;
+    border-color: var(--tul_recruitment-header-border-color);
+    border-style: solid;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 300px;
+    margin: 1rem auto;
+
+    >div,
+    >p {
+        margin: 0 auto;
+        width: fit-content;
+        max-width: 95%;
+        padding: 0.5rem;
+    }
+
+    >div {
+        display: block;
+
+        >label,
+        >input,
+        >button {
+            display: block;
+            width: fit-content;
+            max-width: 95%;
+        }
+    }
+}

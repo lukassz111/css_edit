@@ -1,0 +1,17 @@
+.theme-dark {.view-opinion-graduate .carousel-control-group>.carousel-control {
+  background: var(--tul-recruitment-beige-light);
+  border-color: var(--tul-recruitment-beige-dark);
+}
+.view-opinion-graduate .carousel-control-group .carousel-control-next-icon {
+  background-image: var(--tul-svg-dark-arrow-btn-right);
+}
+.view-opinion-graduate .carousel-control-group .carousel-control-prev-icon {
+  background-image: var(--tul-svg-dark-arrow-btn-left);
+}
+.view-opinion-graduate .carousel>.carousel-inner>.carousel-item>.carousel-item-inner {
+  background-color: var(--tul-recruitment-beige-dark);
+}
+.view-opinion-graduate .carousel>.carousel-inner>.carousel-item>.carousel-item-inner>.node {
+  border-color: var(--tul-recruitment-beige-light);
+}
+} 

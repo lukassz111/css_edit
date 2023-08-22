@@ -1,0 +1,196 @@
+#header {
+    min-width: 375px;
+    width: 375px;
+    max-width: 375px;
+    min-height: 60px;
+    /* height: 60px; */
+    /* max-height: 60px; */
+    padding: 0;
+    background: var(--tul-recruitment-beige-light);
+}
+header {
+    position:fixed;
+    z-index:200;
+    top: 0px;
+}
+@media (min-width: 376px) {
+    #header {
+        width: 100%;
+        min-width: 376px;
+        max-width: unset;
+
+    }
+}
+
+#header>#navbar-top,
+#header>#navbar-main {
+    /*  4.26% of 375px = 16px */
+    padding: 0 4.26% 0 4.26%;
+}
+
+@media (min-width: 376px) {
+
+    #header>#navbar-top,
+    #header>#navbar-main {
+        /* 1.38% of 1440px = 20px */
+        padding: 0 1.38% 0 1.38%;
+    }
+}
+
+#header>#navbar-top {
+    min-height: 42px;
+    border-bottom-style: solid;
+    border-bottom-width: 1pt;
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+@media (max-width: 375px) {
+    #header>#navbar-top {
+        display: none;
+    }
+}
+
+#header>#navbar-top .region-top-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#header>#navbar-main {
+    background: var(--tul-recruitment-beige-light);
+    color: var(--tul-recruitment-blue-medium);
+    font-size: 1rem;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-bottom-width: 1pt;
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+}
+
+#header>#navbar-main>.navbar {
+    background: inherit;
+    color: inherit;
+}
+
+#header>#navbar-main .navbar-brand {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+}
+
+#header>#navbar-main .navbar-brand>img {
+    height: 60px;
+}
+
+#header>#navbar-main #block-glownanawigacja {
+    overflow: auto;
+}
+
+#header>#navbar-main #block-glownanawigacja,
+#header>#navbar-main #block-glownanawigacja a {
+    color: var(--tul_recruitment-header-menu-text);
+}
+
+#header>#navbar-main #block-glownanawigacja .navbar-nav {
+    display: inline;
+    padding: 0;
+
+}
+
+#header>#navbar-main #block-glownanawigacja .navbar-nav>.nav-item {
+    display: inline-block;
+}
+
+#header>#navbar-main button.navbar-toggle {
+    background-color: transparent;
+    border-width: 0;
+    height: 1.6rem;
+}
+
+@media (min-width: 376px) {
+    #header>#navbar-main button.navbar-toggle {
+        display: none;
+    }
+}
+
+#header>#navbar-main.tul-recruitment-navbar-main-overflow button.navbar-toggle {
+    display: block;
+}
+
+#header>#navbar-main.tul-recruitment-navbar-main-overflow>.navbar,
+#header>#navbar-main.tul-recruitment-navbar-main-overflow>.navbar+.max-w-375px-hide {
+    display: none;
+}
+
+#header>#navbar-main button.navbar-toggle>svg {
+    height: 100%;
+}
+
+
+#header>#navbar-offcanvas {
+    width: 100%;
+    border-width: 0;
+    background-color: var(--tul-recruitment-beige-light);
+}
+
+#header>#navbar-offcanvas>.offcanvas-header-top {
+    height: 60px;
+    border-bottom-style: solid;
+    border-bottom-width: 1pt;
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+#header>#navbar-offcanvas #navbar-offcanvas-close {
+    border-bottom: 1px solid var(--tul_recruitment-border);
+}
+
+#header>#navbar-offcanvas>.offcanvas-header-top {
+    padding: 0 4.26% 0 4.26%;
+}
+
+#header>#navbar-offcanvas>.offcanvas-header-top .region-navigation-offcanvas-header-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#header>#navbar-offcanvas>.offcanvas-header-top .region-navigation-offcanvas-header-top>.block {
+    width: fit-content;
+    padding: 0;
+}
+
+#header>#navbar-offcanvas>.offcanvas-header {
+    height: 42px;
+    border-bottom-style: solid;
+    border-bottom-width: 1pt;
+    border-bottom-color: var(--tul_recruitment-header-border-color);
+    padding: 0 4.26% 0 4.26%;
+}
+
+#header>#navbar-offcanvas>.offcanvas-header .region-navigation-offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px;
+}
+
+#header>#navbar-offcanvas>.offcanvas-header .region-navigation-offcanvas-header>.block {
+    width: fit-content;
+    padding: 0;
+}
+
+
+.tul-recruitment-mobile-header #header > #navbar-top {
+    display: none;
+}

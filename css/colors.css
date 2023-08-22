@@ -1,0 +1,14 @@
+/* ---------- Color Module Styles ----------- */
+:root {
+  --var-top: #055a8e;
+  --var-bottom: #1d84c3;
+  --var-sidebar: #f6f6f2;
+  --var-sidebarborders: #f9f9f9;
+  --var-bg: #ffffff;
+  --var-footer: #292929;
+  --var-button: #007bff;
+  --var-buttonhover: #0256b1;
+  --var-titleslogan: #fffeff;
+  --var-text: #3b3b3b;
+  --var-link: #0071b3;
+}

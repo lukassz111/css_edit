@@ -1,0 +1,46 @@
+/* .tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club {
+    background: red;
+    border-radius: 0.56rem;
+    padding: 1rem;
+} */
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>h2 {
+    display: none;
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content {
+    background: var(--tul_recruitment-white) !important;
+    border-radius: 0.56rem;
+    border-width: 1pt;
+    border-style: solid;
+    border-color: var(--tul-recruitment-beige-dark);
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content img {
+    border-radius: 0.56rem 0.56rem 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content .block-field-blocktaxonomy-termtaxonomy-science-clubname>.content {
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content .block-field-blocktaxonomy-termtaxonomy-science-clubname>.content>.field {
+    color: inherit;
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content .block-field-blocktaxonomy-termtaxonomy-science-clubname>.content>.field>a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content .block-field-blocktaxonomy-termtaxonomy-science-clubfield-departament>.content {
+    padding: 1rem;
+    padding-top: 0;
+}
+
+.tul-recruitment-view-mode-teaser-with-taxonomy.vocabulary-taxonomy-science-club>.content .block-field-blocktaxonomy-termtaxonomy-science-clubfield-departament>.content>.field {
+    color: var(--tul-recruitment-grey-medium-light);
+}

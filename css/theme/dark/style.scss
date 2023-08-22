@@ -1,0 +1,17 @@
+.theme-dark {
+  .svg-inline--fa {
+    color: white;
+  }
+
+  html,
+  body,
+  #page-wrapper {
+    color: var(--tul-recruitment-beige-light);
+  }
+
+  #page,
+  #main-wrapper {
+    background: var(--tul-recruitment-navyblack-dark);
+    color: var(--tul-recruitment-beige-light);
+  }
+}

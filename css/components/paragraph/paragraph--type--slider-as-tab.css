@@ -1,0 +1,56 @@
+.paragraph--type--slider-as-tab {
+    width: 100%;
+    height: min-content;
+    position: relative;
+}
+
+.paragraph--type--slider-as-tab>.control-group {
+    position: absolute;
+    bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.paragraph--type--slider-as-tab>.control-group>nav {
+    background: transparent;
+}
+
+.paragraph--type--slider-as-tab>.control-group>nav>.nav-tabs {
+    background: var(--tul_recruitment-white-transparent);
+    border-radius: 30rem;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.paragraph--type--slider-as-tab>.control-group>nav>.nav-tabs>button {
+    background: transparent;
+    border-radius: 30rem;
+    border-width: 0;
+    margin: 0;
+    color: var(--tul-recruitment-blue-medium);
+}
+
+.paragraph--type--slider-as-tab>.control-group>nav>.nav-tabs>button.active {
+    background: var(--tul_recruitment-white);
+}
+
+.paragraph--type--slider-as-tab>.field--name-field-list-slide {
+    width: 100%;
+    height: min-content;
+}
+
+.paragraph--type--slider-as-tab>.field--name-field-list-slide>.tab-pane {
+    width: 100%;
+    height: min-content;
+}
+
+.paragraph--type--slider-as-tab>.field--name-field-list-slide>.tab-pane>.tul-recruitment-slide {
+    width: 100%;
+    height: min-content;
+}
+
+.paragraph--type--slider-as-tab>.field--name-field-list-slide>.tab-pane>.tul-recruitment-slide>.field--name-field-slide-link-label {
+    display: none;
+}

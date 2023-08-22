@@ -2,7 +2,6 @@
 import { off } from "process";
 import { CssNodeDeleteFilter } from "./CssNodeDeleteFilter";
 import CssNodeType from "./CssNodeType";
-import { CssRuleNode } from "./CssRuleNode";
 import CssUtil from "./CssUtil";
 import { ICssNode } from "./ICssNode";
 import { ICssNodeWithChildren } from "./ICssNodeWithChildren";

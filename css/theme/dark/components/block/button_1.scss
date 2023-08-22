@@ -1,0 +1,15 @@
+.theme-dark {
+  .tul-recruitment-bundle-button-1 .content a>button {
+    background-color: var(--tul-recruitment-orange-light);
+    border-color: var(--tul-recruitment-orange-light);
+    color: var(--tul-recruitment-navyblack-dark);
+  }
+
+  .tul-recruitment-style-icon-right-arrow.tul-recruitment-bundle-button-1 .content button>span::after {
+    background-image: var(--tul-svg-dark-arrow-btn-right);
+  }
+
+  .tul-recruitment-style-icon-before-switch-website.tul-recruitment-bundle-button-1 .content button>span::before {
+    background-image: var(--tul-svg-dark-switch-website);
+  }
+}

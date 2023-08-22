@@ -1,0 +1,20 @@
+.paragraph--type--slide-image {
+    position: relative;
+}
+.paragraph--type--slide-image > a {
+    width: 100%;
+    height: min-content;
+    display: block;
+}
+.paragraph--type--slide-image .field--name-field-slide-media {
+    width: 100%;
+    height: min-content;
+}
+
+.paragraph--type--slide-image .field--name-field-slide-media>img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.56rem;
+    border-width: 0;
+    border-style: solid;
+}

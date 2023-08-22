@@ -1,0 +1,59 @@
+.paragraph--type--extend-cards {
+    max-width: 843px;
+    margin: 0 auto;
+}
+
+.paragraph--type--extend-cards>.accordion>.accordion-item {
+    margin: 1.25rem 0;
+    border-radius: 0.56rem;
+    background-color: var(--tul_recruitment-white);
+    border-color: var(--tul_recruitment-white);
+    border-width: 0;
+    color: var(--tul-recruitment-blue-medium);
+}
+
+.paragraph--type--extend-cards>.accordion>.accordion-item>h2>button {
+    border-radius: 0.56rem;
+    background-color: var(--tul_recruitment-white);
+    border-color: var(--tul_recruitment-white);
+    border-width: 0;
+    color: var(--tul-recruitment-blue-medium);
+    outline-color: var(--tul_recruitment-white);
+    box-shadow: none;
+    /* --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16.5' cy='16.5' r='16' stroke='%230f202c'/%3E%3Ccircle cx='16.5' cy='16.5' r='16' stroke='%23162336'/%3E%3Ccircle cx='16.5' cy='16.5' r='16' stroke='%23112633'/%3E%3Cline x1='23' y1='16.75' x2='10' y2='16.75' stroke='%230F202C' stroke-width='1.5'/%3E%3Cline x1='23' y1='16.75' x2='10' y2='16.75' stroke='%23162336' stroke-width='1.5'/%3E%3Cline x1='23' y1='16.75' x2='10' y2='16.75' stroke='%23112633' stroke-width='1.5'/%3E%3Crect x='-985.5' y='-44.5' width='2153' height='2097' rx='4.5' stroke='%239747ff' stroke-dasharray='10 5'/%3E%3Cpath d='M -3459 -137 H 6200 V -139 H -3459 V -137 Z M 6201 -136 V 4719 H 6203 V -136 H 6201 Z M 6200 4720 H -3459 V 4722 H 6200 V 4720 Z M -3460 4719 V -136 H -3462 V 4719 H -3460 Z M -3459 4720 C -3459.6 4720 -3460 4719.6 -3460 4719 H -3462 C -3462 4720.7 -3460.7 4722 -3459 4722 V 4720 Z M 6201 4719 C 6201 4719.6 6200.6 4720 6200 4720 V 4722 C 6201.7 4722 6203 4720.7 6203 4719 H 6201 Z M 6200 -137 C 6200.6 -137 6201 -136.6 6201 -136 H 6203 C 6203 -137.7 6201.7 -139 6200 -139 V -137 Z M -3459 -139 C -3460.7 -139 -3462 -137.7 -3462 -136 H -3460 C -3460 -136.6 -3459.6 -137 -3459 -137 V -139 Z' fill='black' fill-opacity='0.1'/%3E%3C/svg%3E%0A");
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16.5' cy='16.5' r='16'/%3E%3Ccircle cx='16.5' cy='16.5' r='16' stroke='%230f202c'/%3E%3Ccircle cx='16.5' cy='16.5' r='16' stroke='%23162336'/%3E%3Ccircle cx='16.5' cy='16.5' r='16' stroke='%23112633'/%3E%3Cline x1='16.75' y1='10' x2='16.75' y2='23' stroke='%230F202C' stroke-width='1.5'/%3E%3Cline x1='16.75' y1='10' x2='16.75' y2='23' stroke='%23162336' stroke-width='1.5'/%3E%3Cline x1='16.75' y1='10' x2='16.75' y2='23' stroke='%23112633' stroke-width='1.5'/%3E%3Cline x1='23' y1='16.75' x2='10' y2='16.75' stroke='%230F202C' stroke-width='1.5'/%3E%3Cline x1='23' y1='16.75' x2='10' y2='16.75' stroke='%23162336' stroke-width='1.5'/%3E%3Cline x1='23' y1='16.75' x2='10' y2='16.75' stroke='%23112633' stroke-width='1.5'/%3E%3C/svg%3E%0A"); */
+    --bs-accordion-btn-active-icon: var(--tul-svg-dark-circle-minus);
+    --bs-accordion-btn-icon: var(--tul-svg-dark-circle-plus);
+}
+
+
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-color: var(--tul-recruitment-beige-light);
+    border: 1px solid var(--tul-recruitment-beige-dark);
+    padding: 0.3rem;
+}
+
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item + .accordion-item {
+  border-top-width: 0;
+}
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item:first-child {
+    border-radius: 0.56rem 0.56rem 0 0 !important;
+} 
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item:last-child {
+    border-radius: 0 0 0.56rem 0.56rem !important;
+}
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item > h2 {
+  background-color: inherit;
+}
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item > h2 > button {
+  background-color: inherit;
+}
+.tul-recruitment-style-compact-cards.paragraph--type--extend-cards>.accordion>.accordion-item >.accordion-collapse {
+  border-top: 1px solid var(--tul-recruitment-beige-dark);
+  margin-left: -0.3rem;
+  margin-right: -0.3rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}

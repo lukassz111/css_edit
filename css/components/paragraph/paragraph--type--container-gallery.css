@@ -1,0 +1,67 @@
+
+.paragraph--type--container-gallery {
+    width: 100%;
+}
+
+
+.paragraph--type--container.tul-recruitment-contains-container-gallery {
+    padding-bottom: 0;
+}
+
+.paragraph--type--container.tul-recruitment-contains-container-gallery>.field__items>.field__item:last-of-type>.paragraph--type--container-gallery {
+    background: var(--tul-recruitment-beige-light);
+    margin-left: calc(0rem - var(--paragraph--type--container-padding-body));
+    margin-right: calc(0rem - var(--paragraph--type--container-padding-body));
+    padding-left: var(--paragraph--type--container-padding-body);
+    padding-right: var(--paragraph--type--container-padding-body);
+    width: calc(100% + var(--paragraph--type--container-padding-body) + var(--paragraph--type--container-padding-body));
+    margin-top: 5rem;
+}
+
+.paragraph--type--container-gallery > .field--name-field-container-gallery-photo {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50%;
+    grid-template-rows: 1fr;
+    position: relative;
+    left: unset;
+    right: unset;
+    margin: 0;
+    top: -3rem
+  }
+@media(min-width: 1440px) {
+
+    .paragraph--type--container-gallery>.field--name-field-container-gallery-photo {
+        grid-template-columns: repeat(var(--paragraph-field-container-gallery-photo-items), 1fr);
+    }
+}
+
+.paragraph--type--container-gallery > .field--name-field-container-gallery-photo > .field__item {
+    display: none;
+    width: 100%;
+}
+.paragraph--type--container-gallery > .field--name-field-container-gallery-photo > .field__item:nth-child(2),
+.paragraph--type--container-gallery > .field--name-field-container-gallery-photo > .field__item:nth-child(1) {
+    display: block;
+}
+
+@media(min-width: 1440px) {
+    .paragraph--type--container-gallery > .field--name-field-container-gallery-photo > .field__item {
+        display: block;
+    }
+}
+.paragraph--type--container-gallery>.field--name-field-container-gallery-photo>.field__item>.image-style-w838h504 {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1440px) {
+    .paragraph--type--container.tul-recruitment-contains-container-gallery > .field__items > .field__item:last-of-type > .paragraph--type--container-gallery {
+        /* width: 100vw; */
+        width: auto;
+        margin-left: calc( 0px - ( 53vw - 720px));
+        margin-right: calc( 0px - ( 53vw - 720px ));
+        padding-left: calc( 53vw - 720px);
+        padding-right: calc( 53vw - 720px );
+    }
+}
