@@ -1,11 +1,16 @@
 import { BufforText } from "./BufforText";
-import { CssNode, RuleCssNode } from "./CssNode/CssNode";
+import { CssNode, CssNodeType, CssVariableCssNode, ICssNode, RuleCssNode } from "./CssNode/CssNode";
 import { MediaBlockCssNode } from "./CssNode/MediaBlockCssNode";
 import { SelectorBlockCssNode } from "./CssNode/SelectorBlockCssNode";
 import { ImportCssNode } from "./CssNode/ImportCssNode";
 import { MultiLineCommentCssNode } from "./CssNode/MultiLineCommentCssNode";
 import { OneLineCommentCssNode } from "./CssNode/OneLineCommentCssNode";
 import { UndefinedCssNode } from "./CssNode/UndefinedCssNode";
+
+export interface ICssJson {
+    child: ICssNode[]
+}
+
 function CompareCss(cssA: string, cssB: string): boolean {
     const prepare = (v: string):string => { 
         return v.replaceAll(' ','').replaceAll('\n','').replaceAll('\r','');
@@ -173,7 +178,7 @@ function ParseCssStringSplitToSmallChunks(cssString: string, enabledCheck: boole
     }
     return parsedData;
 }
-function ParseCssSmallChunksToJson(smallChunks: string[]): any {
+function ParseCssSmallChunksToJson(smallChunks: string[]): ICssJson {
     let data: CssNode[] = [];
     smallChunks.forEach(chunk=>{
         if(chunk.trim().startsWith('/*')) {
@@ -191,12 +196,17 @@ function ParseCssSmallChunksToJson(smallChunks: string[]): any {
         //Block with selector
         else if(
             (
-                /^(#|\.|\:)?[A-Za-z][A-Za-z0-9 >,\*#_+\:\.\-\(\)]{1,}\s{0,}\{/
+                /^(>)?(#|\.|\:)?[A-Za-z][A-Za-z0-9 >=,\*#_+\:\.\-\(\)\[\]\"]{1,}\s{0,}\{/
                 .test(
                     chunk.trim().replaceAll('\r','').replaceAll('\n','')
                 )
                 ||
-                /^\*([A-Za-z0-9 >,\*#_+\:\.\-\(\)]{1,})?\s{0,}\{/
+                /^&[A-Za-z0-9 >=,\*#_+\:\.\-\(\)\[\]\"]{1,}\s{0,}\{/
+                .test(
+                    chunk.trim().replaceAll('\r','').replaceAll('\n','')
+                )
+                ||
+                /^\*([A-Za-z0-9 >=,\*#_+\:\.\-\(\)\[\]\"]{1,})?\s{0,}\{/
                 .test(
                     chunk.trim().replaceAll('\r','').replaceAll('\n','')
                 )
@@ -233,6 +243,16 @@ function ParseCssSmallChunksToJson(smallChunks: string[]): any {
             let i = new RuleCssNode(chunk);
             data.push(i);
         }
+        else if(
+            (
+                /^--[A-Za-z][^:]{1,}:\s{0,}/.test(chunk.trim())
+            )
+            &&
+            chunk.trim().endsWith(';')
+        ) {
+            let i = new CssVariableCssNode(chunk);
+            data.push(i);
+        }
         else {
             let i = new UndefinedCssNode(chunk);
             data.push(i);
@@ -246,11 +266,57 @@ function CssToJson(cssString: string): any {
     let json = CssUtil.ParseCssSmallChunksToJson(cssStringChunks);
     return json;
 }
+function JsonToCss(j: any,depth: number = 0): string {
+    let css = '';
+    let child: (ICssNode|string)[] = j['child'];
+    for(let childIndex = 0; childIndex < child.length; childIndex++) {
+        if(typeof(child[childIndex]) == typeof(' ') ) {
+            css+=child[childIndex];
+            continue;
+        }
+        let currentChild: ICssNode = child[childIndex] as ICssNode;
+        switch(currentChild.type) {
+            case CssNodeType.SelectorBlockCssNode:
+            case CssNodeType.MediaBlock:
+                {
+                    let code: string = currentChild.name + '{\n';
+                    if(currentChild.bodyJson != null) {
+                        code +=  JsonToCss({'child':currentChild.bodyJson},depth+1);
+                    } else {
+                        code +=  currentChild.body + '\n';
+                    }
+                    code += '}';
+                    css += code+"\n";
+                }
+                break;
+            case CssNodeType.Import:
+            case CssNodeType.MultiLineComment:
+            case CssNodeType.OneLineComment:
+                {
+                    let code = ''+currentChild.raw;
+                    css += code.trim()+"\n";
+                }
+                break;
+            case CssNodeType.CssVariable:
+            case CssNodeType.Rule:
+                {
+                    let code = ''+currentChild.name+": "+currentChild.body+";";
+                    css += code.trim()+"\n";
+                }
+                break;
+            default:
+                console.log("type not implemented: "+currentChild.type);
+                console.log(currentChild);
+        }
+    }
+    return css;
+}
 
 const CssUtil = {
     ParseCssStringSplitToSmallChunks,
     ParseCssSmallChunksToJson,
     CssToJson,
+    JsonToCss,
     CompareCss
 };
 export default CssUtil;

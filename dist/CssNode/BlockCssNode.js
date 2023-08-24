@@ -8,18 +8,24 @@ const CssUtil_1 = __importDefault(require("../CssUtil"));
 const CssNode_1 = require("./CssNode");
 class BlockCssNode extends CssNode_1.CssNode {
     toJson() {
+        if (this.bodyJson != null) {
+            return {
+                type: this.type,
+                name: this.name,
+                bodyJson: this.bodyJson
+            };
+        }
         return {
             type: this.type,
             name: this.name,
-            body: this.body,
-            bodyJson: this.bodyJson
+            body: this.body
         };
     }
     constructor(type, raw) {
         super(type, raw);
         this.name = '';
         this.body = '';
-        this.bodyJson = {};
+        this.bodyJson = null;
         let bodyStartIndex = raw.indexOf('{');
         this.name = raw.substring(0, bodyStartIndex).trim();
         this.body = raw.substring(bodyStartIndex).trim();
@@ -29,7 +35,6 @@ class BlockCssNode extends CssNode_1.CssNode {
         if (this.body.endsWith('}')) {
             this.body = this.body.substring(0, this.body.length - 1);
         }
-        console.log('Start: BlockCssNode');
         this.bodyJson = CssUtil_1.default.CssToJson(this.body)['child'];
     }
 }

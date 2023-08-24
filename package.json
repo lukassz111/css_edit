@@ -7,7 +7,7 @@
     "build": "npx tsc",
     "start": "npx tsc && node dist/index.js",
     "start_help": "npx tsc && node dist/index.js -h",
-    "test": "npx tsc && node dist/index.js -i test/in.scss -o test/out.json --toJson > x.txt"
+    "test": "npx tsc && node dist/index.js --file test/css_edit.txt"
   },
   "author": "lukassz111@gmail.com",
   "license": "ISC",

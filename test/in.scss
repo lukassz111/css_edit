@@ -1,34 +1,768 @@
-.container {
-    // --tul_recruitment-bg: #f8f6f3;
+/**
+*@file
+*SubthemespecificCSS.
+*/
+//--tul_recruitment-bg:#f8f6f3;
+@import'../image/figma/svg.scss';
+@import'./components/region-shortcuts.scss';
+
+:root {
+    text-decoration: none;
+    //--tul_recruitment-bg:#f8f6f3;
     --tul_recruitment-border: #dfdbd5;
     --tul_recruitment-text: #112633;
     --tul_recruitment-text-onblack: #f1edec;
     --tul_recruitment-bg-footer: #112633;
     --tul_recruitment-text-on-bg-orange: #112633;
     --tul_recruitment-header-menu-text: #112633;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr min-content;
-    grid-template-rows: 1fr 1fr;
-    gap: 0% 0%;
-    grid-template-areas:
-        "header header"
-        "content btn";
-    justify-content: space-evenly;
-    align-content: stretch;
-    justify-items: stretch;
-    align-items: stretch;
+    --tul_recruitment-header-border-color: #d7d3cc;
+    --tul_recruitment-form-radio-button-not-active: #e4e1dc;
+    --tul_recruitment-form-input-placeholder-text: #787878;
+    --tul_recruitment-view-background-dot-color: #cacbca;
+    --tul_recruitment-white: #ffffff;
+    --tul_recruitment-white-transparent: #FFFFFF85;
+    --tul-recruitment-burgundy-dark: #81282B;
+    --tul-recruitment-burgundy: #622022;
+    --tul-recruitment-burgundy-light: #713536;
+    --tul-recruitment-beige-dark: #D7D3CC;
+    --tul-recruitment-beige-medium: #DCDCDC;
+    --tul-recruitment-beige-light: #F8F6F3;
+    --tul-recruitment-beige-dots: #DADBDC;
+    --tul-recruitment-blue-dark: #0B1A21;
+    --tul-recruitment-blue-medium: #112633;
+    --tul-recruitment-blue-light: #283A46;
+    --tul_recruitment-orange: #ff8440;
+    --tul-recruitment-orange-dark: #FF763F;
+    --tul-recruitment-orange-light: #FF9253;
+    --tul-recruitment-navyblack-dark: #0A161D;
+    --tul-recruitment-navyblack-medium: #121D24;
+    --tul-recruitment-navy-dark: #13222A;
+    --tul-recruitment-navy-medium: #122B3C;
+    --tul-recruitment-grey-dark: #423A35;
+    --tul-recruitment-grey-medium: #3A4348;
+    --tul-recruitment-grey-medium-light: #8A8A8A;
+    --tul-recruitment-grey-light: #787878;
+    --tul-recruitment-grey-lighter: #AEABA5;
+    --tul-recruitment-snow: #FAF9F7;
+    --tul-recruitment-americansilver: #D1D0CB;
+    --tul-recruitment-alabaster: #EAEBEE;
+    --tul-recruitment-blue-grey: #B3B8BA;
 }
 
-.header {
-    grid-area: header;
+* {
+    transition: 100ms;
 }
 
+/**
+*Fixingbootstrap
+*/
+.container-fluid {
+    padding-left: unset;
+    padding-right: unset;
+}
+
+/**
+*Fixingdrupal
+*/
 .content {
-    grid-area: content;
+    color: inherit !important;
+    background-color: inherit !important;
 }
 
-.btn {
-    grid-area: btn;
+.block,
+.text-formatted {
+    color: inherit;
+    background-color: inherit;
+}
+
+#main>div,
+.region-featured-top,
+.region-featured-top>nav {
+    max-width: 100%;
+}
+
+/**
+*Minimumsitewidth
+*/
+body,
+html {
+    min-width: 375px;
+    width: 375px;
+}
+
+body,
+#page {
+    font-size: 1rem;
+    /*min-width:375px!important;*/
+}
+
+#page>#block-breadcrumbs {
+    width: var(--id-main-wrapper-width);
+    margin: 0auto;
+    padding-top: 1.75rem;
+}
+
+/**
+*Fixlayout-builder
+*/
+.layout-builder__region-label {
+    display: unset;
+}
+
+/**
+*
+*/
+.nav {
+    height: 42px;
+    font: satoshi;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.region-featured-top.nav {
+    height: unset;
+}
+
+.nav_menu {
+    height: 80px;
+    padding-right: 23px;
+    padding-left: 20px;
+}
+
+html,
+body {
+    font-size: 16px;
+}
+
+html,
+body,
+#page-wrapper {
+    min-height: calc(100vh-83px);
+    min-width: 100vw;
+    /*min-width:375px!important;*/
+    /*min-width:max(375px,100vw)!important;*/
+}
+
+#page-wrapper {
+    font-size: 1rem;
+    line-height: 1.56rem;
+    font-weight: 500;
+}
+
+html,
+body,
+#page-wrapper {
+    background: white;
+    color: var(--tul-recruitment-blue-medium);
+    font-family: 'Satoshi-Medium';
+}
+
+#page,
+#main-wrapper {
+    background: var(--tul-recruitment-beige-light);
+    color: var(--tul-recruitment-blue-medium);
+    font-size: 1rem;
+}
+
+/**Ustawiaodpowiedniemarginesydlaczęścizwłaściwązawartościąstrony*/
+#main-wrapper {
+    min-width: 375px;
+    /*min-width:max(375px,100vw)!important;*/
+    width: 100vw;
+}
+
+#navbar-offcanvas {
+    min-width: 375px;
+}
+
+:root {
+    --id-main-wrapper-width: 91.47vw;
+    --id-main-wrapper-margin: 4.265vw;
+}
+
+#main-wrapper>#main {
+    width: var(--id-main-wrapper-width);
+    /*width:max(var(--id-main-wrapper-width),375px);*/
+    margin: 0auto;
+    padding: 0;
+    max-width: 100%;
+}
+
+#main-wrapper>#main#main-wrapper>#main>.row,
+#main-wrapper>#main>div,
+#main-wrapper>#main#content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media(min-width:1440px) {
+    #main-wrapper {
+        min-width: 1440px;
+    }
+
+    /*#main-wrapper>#main{*/
+    :root {
+        --id-main-wrapper-width: 97.22vw;
+        --id-main-wrapper-margin: 1.39vw;
+        /*--id-main-wrapper-margin-double:calc(100vw-var(--id-main-wrapper-width));
+--id-main-wrapper-margin:calc(var(--id-main-wrapper-margin-double)/2);*/
+    }
+}
+
+.navbar_custom {
+    height: 80px;
+    color: rgb(255, 85, 215);
+}
+
+@media(max-width:375px) {
+    .max-w-375px-hide {
+        display: none;
+    }
+}
+
+@media(max-width:376px) {
+    .max-w-375px-hide {
+        display: none;
+    }
+
+    .tul-recruitment-bundle-card-with-background {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 5vw);
+        font-size: 1.2rem !important;
+        text-align: center;
+    }
+
+    .field--name-field-bck-card-num {
+        font-size: 2rem !important;
+    }
+
+    .field--name-field-bck-card-title {
+        display: grid;
+        text-align: center;
+        font-size: 2.3rem;
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+
+    .field--name-field-bck-card-desc {
+        padding: 1rem;
+        line-height: 100%;
+        font-size: 1.2rem;
+    }
+
+    .field--name-field-bck-card-stat {
+        display: grid;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 5vw);
+        grid-gap: 0%;
+        font-size: 1rem;
+        text-align: center;
+        row-gap: 6rem !important;
+    }
+}
+
+@media(min-width:376px) {
+    .tul-recruitment-bundle-card-with-background {
+        margin-top: 3rem;
+        margin-bottom: 10rem;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 5vw);
+        grid-gap: 0%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .field--name-field-bck-card-num {
+        font-size: 3rem !important;
+    }
+
+    .field--name-field-bck-card-title {
+        display: grid;
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .field--name-field-bck-card-desc {
+        padding: 1.2rem;
+        line-height: 100%;
+        font-size: 1.5rem;
+    }
+
+    .field--name-field-bck-card-stat {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 5vw);
+        grid-gap: 0%;
+        font-size: 2.3rem;
+        text-align: center;
+        row-gap: 6rem !important;
+    }
+}
+
+@media(min-width:1209px) {
+    .tul-recruitment-bundle-card-with-background {
+        margin-top: 3rem;
+        margin-bottom: 23rem;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 5vw);
+        grid-gap: 0%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .field--name-field-bck-card-num {
+        font-size: 3rem !important;
+    }
+
+    .field--name-field-bck-card-title {
+        text-align: center;
+        font-size: 2.75rem;
+        margin-bottom: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .field--name-field-bck-card-desc {
+        padding: 2rem;
+        line-height: 100%;
+        font-size: 2rem;
+    }
+
+    .field--name-field-bck-card-stat {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 3;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 5vw);
+        grid-gap: 10%;
+        font-size: 4rem;
+        text-align: center;
+        row-gap: 6rem !important;
+    }
+}
+
+@media(min-width:1440px) {
+    .tul-recruitment-bundle-card-with-background {
+        margin-top: 6rem;
+        margin-bottom: 25rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 5vw);
+        grid-gap: 5%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .field--name-field-bck-card-num {
+        font-size: 4rem !important;
+    }
+
+    .field--name-field-bck-card-title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        margin-top: 2rem;
+    }
+
+    .field--name-field-bck-card-desc {
+        padding: 2rem;
+        line-height: 100%;
+        font-size: 2.5rem;
+    }
+
+    .field--name-field-bck-card-stat {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 5vw);
+        grid-gap: 10%;
+        font-size: 4rem;
+        text-align: center;
+        row-gap: 7rem !important;
+        margin-top: 20rem;
+    }
+}
+
+@media(min-width:2940px) {
+    .tul-recruitment-bundle-card-with-background {
+        margin-top: 6rem;
+        margin-bottom: 25rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 5vw);
+        grid-gap: 5%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .field--name-field-bck-card-num {
+        font-size: 4rem !important;
+    }
+
+    .field--name-field-bck-card-title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        margin-top: 2rem;
+    }
+
+    .field--name-field-bck-card-desc {
+        padding: 2rem;
+        line-height: 100%;
+        font-size: 2.5rem;
+    }
+
+    .field--name-field-bck-card-stat {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 5vw);
+        grid-gap: 10%;
+        font-size: 4rem;
+        text-align: center;
+        row-gap: 5rem !important;
+        margin-top: 20rem;
+    }
+}
+
+.paragraph--type--card-vid {
+    background-image: radial-gradient(var(--tul-recruitment-blue-light)10%, var(--tul-recruitment-blue-medium)20%);
+    background-size: 16px16px;
+}
+
+.field.field--name-field-card {
+    display: flex;
+}
+
+.tul-recruitment-bundle-card-vid {
+    padding: 1rem;
+    border-radius: 0.56rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.field--name-field-card-vid-cont {
+    text-align: center;
+}
+
+/*.field--name-field-card-vid-cont>p{
+margin-inline:15%;
+}*/
+.field--name-field-media-oembed-video>.field__item>iframe {
+    width: 100%;
+    border-radius: 0.56rem;
+    height: 100%;
+}
+
+.field--name-field-gallery-media {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 5vw);
+    grid-gap: 5%;
+}
+
+.field--name-field-gallery-mediaimg {
+    border-radius: 0.26rem;
+}
+
+.field--name-field-bck-card-title {
+    text-align: center;
+}
+
+/*.field--name-field-bck-card-stat{
+grid-template-rows:auto;
+}*/
+.field--name-field-bck-card-stat>.field__item {
+    padding-top: 2rem;
+}
+
+.field--name-field-bck-card-num.field--type-string {
+    font-size: 2rem;
+}
+
+/**ScrollbarCSS*/
+* {
+    --main-scrollbar-color: var(--tul-recruitment-beige-medium);
+    --button-scrollbar-color: var(--tul-recruitment-beige-dark);
+}
+
+/**Firefox*/
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--main-scrollbar-color)var(--button-scrollbar-color);
+}
+
+/**Chrome,Edge,andSafari*/
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--main-scrollbar-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--button-scrollbar-color);
+    border-radius: 0px;
+    border: 0pxsolidvar(--main-scrollbar-color);
+}
+
+.field--name-field-container-gallery-photo {
+    display: grid !important;
+    right: 10%;
+    left: 10%;
+    position: absolute;
+    grid-gap: 0.2rem;
+}
+
+.field--name-field-container-gallery-photo.field__item:nth-of-type(1) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.field--name-field-container-gallery-photo.field__item:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.field--name-field-container-gallery-photoimg {
+    border-radius: 10px;
+}
+
+/*styltabel*/
+.text-formattedtable {
+    border: 1pxsolid#B7B3B3 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    max-width: 1024px;
+}
+
+@-moz-document url-prefix() {
+    .text-formattedtable {
+        border-radius: 0 !important;
+    }
+}
+
+.text-formattedtd {
+    border: 1pxsolid#B7B3B3 !important;
+}
+
+.text-formattedthead,
+th {
+    background-color: var(--tul-recruitment-beige-dark) !important;
+    color: #0F202C !important;
+}
+
+.text-formattedtbody>tr:nth-child(odd) {
+    background: none !important;
+}
+
+.text-formattedtbody>tr:nth-child(even) {
+    background: #FFFFFF !important;
+}
+
+.text-formattedthead>tr:first-child {
+    border-radius: 50px50px0px0px;
+}
+
+.text-formattedthead>tr:first-child>th:first-child {
+    border-radius: 10px0px0px0px;
+}
+
+.text-formattedthead>tr:first-child>th:last-child {
+    border-radius: 0px10px0px0px;
+}
+
+.text-formattedtbody>tr:last-child>td:first-child {
+    border-radius: 0px0px10px0px;
+}
+
+.text-formattedtbody>tr:last-child>td:last-child {
+    border-radius: 0px0px0px10px;
+}
+
+.view-amplify-possibilities.node--type-articleheader {
+    display: none;
+}
+
+#block-views-block-amplify-possibilities-block-2 {
+    background-color: #0F202C;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.view-amplify-possibilities.node--type-article {
+    display: flex;
+}
+
+.view-amplify-possibilities.node--type-article.node__content {
+    background: white;
+    border-radius: 10px10px10px10px;
+    border: 1pxsolidrgba(215, 211, 204, 0.3);
+}
+
+.view-amplify-possibilities.node--view-mode-teaser {
+    border-bottom: none;
+}
+
+.view-amplify-possibilitiesimg {
+    border-radius: 10px10px0px0px;
+}
+
+#block-views-block-amplify-possibilities-block-2h2 {
+    color: white;
+    text-align: center;
+}
+
+#block-views-block-amplify-possibilities-block-2a {
+    color: #7A7A7A;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+#block-views-block-amplify-possibilities-block-2.block-field-blocknodearticletitle {
+    margin-left: 1rem;
+    margin-top: -1rem;
+}
+
+#block-views-block-amplify-possibilities-block-2article.node__content {
+    border: 0px;
+}
+
+/*fixedheader*/
+/*1440px*/
+header#header {
+    top: 79px;
+}
+
+header#header+* {
+    margin-top: 60px;
+}
+
+.padding-left-1ch {
+    padding-left: 1ch;
+}
+
+a:focus,
+*:focus-visible {
+    outline-color: var(--tul_recruitment-orange);
+    outline-style: solid;
+    outline-width: 2pt;
+}
+
+#navbar-main*:focus-visible {
+    outline-color: var(--tul_recruitment-orange) !important;
+    outline-style: solid !important;
+    outline-width: 2pt !important;
+}
+
+/*Pliknatekstywstawianezcss'a*/
+:root {
+    --tul_recruitment_text-study-degree-label: "Studia";
+    --tul_recruitment_text-study-mode-label: "Tryb";
+    --tul_recruitment_text-study-no-semesters-label: "Liczbasemestrów";
+    --tul_recruitment_text-study-no-seats-label: "Liczbamiejsc";
+    --tul_recruitment_text-study-matura-exam-subjects-label: "Przedmiotynamaturze";
+}
+
+.theme-dark {
+    form {
+
+        fieldset>legend,
+        .form-type-select>label,
+        .form-type-textfield>label {
+            color: var(--tul-recruitment-navy-medium);
+        }
+
+        fieldset.fieldset-wrapper {
+            >.radio {
+                background-color: var(--tul-recruitment-americansilver);
+
+                >.radio>label {
+                    background-color: var(--tul-recruitment-americansilver);
+                    color: var(--tul-recruitment-navyblack-medium);
+                }
+
+                >.radio>input:checked+label {
+                    background-color: var(--tul-recruitment-snow);
+                }
+            }
+        }
+
+        .form-type-textfield {
+            input {
+                color: var(--tul-recruitment-navyblack-medium);
+            }
+        }
+
+        .form-type-select {
+            select {
+                color: var(--tul-recruitment-navyblack-medium);
+
+                &[data-val="All"] {
+                    color: var(--tul-recruitment-navy-medium);
+                }
+            }
+        }
+
+        .form-actions>.btn {
+            color: var(--tul-recruitment-beige-light);
+            background-color: var(--tul-recruitment-navyblack-dark);
+        }
+    }
 }

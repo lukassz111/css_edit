@@ -1,0 +1,6 @@
+ -i test/in.scss -o test/out.scss -rRules test/rules.json 
+  -i test/out.scss -o test/out1.scss -rComments
+  -i test/out1.scss -o test/out2.scss -rEmptyBlocks 
+  -i test/out2.scss -o test/out3.scss -rEmptyBlocks 
+  -i test/out3.scss -o test/out4.scss -rEmptyBlocks
+  -i test/out4.scss -o test/out5.scss -rEmptyBlocks

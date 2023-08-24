@@ -193,10 +193,13 @@ function ParseCssSmallChunksToJson(smallChunks) {
             data.push(i);
         }
         //Block with selector
-        else if ((/^(#|\.|\:)?[A-Za-z][A-Za-z0-9 >,\*#_+\:\.\-\(\)]{1,}\s{0,}\{/
+        else if ((/^(>)?(#|\.|\:)?[A-Za-z][A-Za-z0-9 >=,\*#_+\:\.\-\(\)\[\]\"]{1,}\s{0,}\{/
             .test(chunk.trim().replaceAll('\r', '').replaceAll('\n', ''))
             ||
-                /^\*([A-Za-z0-9 >,\*#_+\:\.\-\(\)]{1,})?\s{0,}\{/
+                /^&[A-Za-z0-9 >=,\*#_+\:\.\-\(\)\[\]\"]{1,}\s{0,}\{/
+                    .test(chunk.trim().replaceAll('\r', '').replaceAll('\n', ''))
+            ||
+                /^\*([A-Za-z0-9 >=,\*#_+\:\.\-\(\)\[\]\"]{1,})?\s{0,}\{/
                     .test(chunk.trim().replaceAll('\r', '').replaceAll('\n', '')))
             &&
                 chunk.trim().endsWith('}')) {
@@ -219,6 +222,12 @@ function ParseCssSmallChunksToJson(smallChunks) {
             let i = new CssNode_1.RuleCssNode(chunk);
             data.push(i);
         }
+        else if ((/^--[A-Za-z][^:]{1,}:\s{0,}/.test(chunk.trim()))
+            &&
+                chunk.trim().endsWith(';')) {
+            let i = new CssNode_1.CssVariableCssNode(chunk);
+            data.push(i);
+        }
         else {
             let i = new UndefinedCssNode_1.UndefinedCssNode(chunk);
             data.push(i);
@@ -232,10 +241,57 @@ function CssToJson(cssString) {
     let json = CssUtil.ParseCssSmallChunksToJson(cssStringChunks);
     return json;
 }
+function JsonToCss(j, depth = 0) {
+    let css = '';
+    let child = j['child'];
+    for (let childIndex = 0; childIndex < child.length; childIndex++) {
+        if (typeof (child[childIndex]) == typeof (' ')) {
+            css += child[childIndex];
+            continue;
+        }
+        let currentChild = child[childIndex];
+        switch (currentChild.type) {
+            case CssNode_1.CssNodeType.SelectorBlockCssNode:
+            case CssNode_1.CssNodeType.MediaBlock:
+                {
+                    let code = currentChild.name + '{\n';
+                    if (currentChild.bodyJson != null) {
+                        code += JsonToCss({ 'child': currentChild.bodyJson }, depth + 1);
+                    }
+                    else {
+                        code += currentChild.body + '\n';
+                    }
+                    code += '}';
+                    css += code + "\n";
+                }
+                break;
+            case CssNode_1.CssNodeType.Import:
+            case CssNode_1.CssNodeType.MultiLineComment:
+            case CssNode_1.CssNodeType.OneLineComment:
+                {
+                    let code = '' + currentChild.raw;
+                    css += code.trim() + "\n";
+                }
+                break;
+            case CssNode_1.CssNodeType.CssVariable:
+            case CssNode_1.CssNodeType.Rule:
+                {
+                    let code = '' + currentChild.name + ": " + currentChild.body + ";";
+                    css += code.trim() + "\n";
+                }
+                break;
+            default:
+                console.log("type not implemented: " + currentChild.type);
+                console.log(currentChild);
+        }
+    }
+    return css;
+}
 const CssUtil = {
     ParseCssStringSplitToSmallChunks,
     ParseCssSmallChunksToJson,
     CssToJson,
+    JsonToCss,
     CompareCss
 };
 exports.default = CssUtil;

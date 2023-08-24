@@ -4,13 +4,19 @@ import { CssNode, ICssNode, CssNodeType } from "./CssNode";
 export abstract class BlockCssNode extends CssNode {
     public name: string = '';
     public body: string = '';
-    public bodyJson: any = {};
+    public bodyJson?: any = null;
     public override toJson(): ICssNode {
+        if(this.bodyJson != null) {
+            return {
+                type: this.type,
+                name: this.name,
+                bodyJson: this.bodyJson
+            };
+        }
         return {
             type: this.type,
             name: this.name,
-            body: this.body,
-            bodyJson: this.bodyJson
+            body: this.body
         };
     }
     constructor(type: CssNodeType, raw: string) {
@@ -24,7 +30,6 @@ export abstract class BlockCssNode extends CssNode {
         if (this.body.endsWith('}')) {
             this.body = this.body.substring(0, this.body.length - 1);
         }
-        console.log('Start: BlockCssNode')
         this.bodyJson = CssUtil.CssToJson(this.body)['child'];
     }
 }
